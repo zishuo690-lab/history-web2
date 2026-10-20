@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時空思辨歷險：國中中國史核心考點探索網</title>
+    <!-- Google Fonts: 繁體中文 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            /* 濃厚黃昏暮色美學 */
+            --night-bg: #111422;
+            --dusk-sky: linear-gradient(180deg, #1b162f 0%, #3d2b45 35%, #7a4338 70%, #b8623b 100%);
+            --panel-bg: #1c233f;
+            --panel-border: #8c6a48;
+            --gold: #f4c46f;
+            --gold-bright: #ffd700;
+            --accent-red: #9e2a2b;
+            --aqua: #4ecdc4;
+            --text-main: #f4f4f6;
+            --text-muted: #b0b8c4;
+            --shadow: rgba(0, 0, 0, 0.6);
+        }
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{margin:0;background:var(--night-bg);color:var(--text-main);font-family:"Noto Sans TC",sans-serif;line-height:1.7;overflow-x:hidden;}
+        
+        /* 頂部導覽列 */
+        .topbar{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,24px);border-bottom:3px solid var(--panel-border);background:rgba(17, 20, 34, 0.95);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100}
+        .brand{font-family:"Noto Sans TC",sans-serif;font-size:16px;font-weight:900;color:var(--gold);text-decoration:none;display:flex;gap:11px;align-items:center}
+        .brand-mark{display:grid;place-items:center;background:var(--accent-red);color:#fff;height:33px;width:33px;font-weight:900;font-size:18px;border:2px solid var(--gold);box-shadow:3px 3px 0 var(--shadow)}
+        nav{display:flex;gap:26px}
+        nav a{color:var(--text-muted);text-decoration:none;font-weight:700;font-size:14px}
+        nav a:hover{color:var(--gold)}
+
+        .section-shell{max-width:1180px;margin:auto;padding:80px 30px}
+        
+        /* 首頁 Hero 區 */
+        .hero{min-height:580px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px}
+        .eyebrow{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:12px;letter-spacing:1px;color:var(--gold);margin:0 0 16px}
+        .hero h1{font-size:clamp(28px,4.2vw,50px);line-height:1.25;letter-spacing:-1px;margin:0 0 20px;font-weight:900}
+        .hero h1 em{font-style:normal;color:var(--gold);text-shadow:2px 2px var(--accent-red)}
+        .lede{color:var(--text-muted);max-width:610px;font-size:16px}
+        .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+
+        /* 古風質感按鈕 */
+        .pixel-btn{border:2px solid var(--gold);box-shadow:4px 4px 0 var(--shadow);background:#252d4a;color:var(--text-main);font-weight:900;padding:11px 18px;transition:.15s;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
+        .pixel-btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--shadow);border-color:var(--gold-bright)}
+        .pixel-btn.primary{background:var(--accent-red);color:#fff;border-color:var(--gold)}
+        .pixel-btn.ghost{background:transparent}
+
+        /* 黃昏暮色宮殿情境場景 */
+        .portal-scene{
+            height: 460px;
+            background: var(--dusk-sky);
+            position: relative;
+            overflow: hidden;
+            border: 4px solid var(--panel-border);
+            box-shadow: 8px 8px 0 var(--shadow);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .sun {
+            position: absolute; bottom: 120px; width: 140px; height: 140px;
+            background: radial-gradient(circle, #ffe6a7 20%, #ff8c42 60%, rgba(255, 140, 66, 0) 100%);
+            border-radius: 50%; filter: blur(4px); opacity: 0.85;
+        }
+
+        .mist-layer {
+            position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255, 180, 100, 0.15) 0%, rgba(30, 20, 35, 0.7) 90%);
+            mix-blend-mode: overlay; pointer-events: none; z-index: 5;
+        }
+
+        .mountains-bg {
+            position: absolute; bottom: 80px; width: 100%; height: 50%; background: #3a2638;
+            clip-path: polygon(0 100%, 0 45%, 15% 25%, 32% 50%, 50% 18%, 68% 48%, 85% 22%, 100% 55%, 100% 100%); opacity: 0.6;
+        }
+
+        .palace-group {
+            position: relative; width: 100%; max-width: 900px; height: 320px; z-index: 2;
+            display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+        }
+
+        .main-palace-back {
+            width: 220px; height: 55px; background: #1c1424; border-top: 3px solid var(--gold);
+            clip-path: polygon(15% 0%, 85% 0%, 100% 40%, 90% 40%, 95% 100%, 5% 100%, 10% 40%, 0% 40%); margin-bottom: -5px;
+        }
+
+        .main-palace-mid {
+            width: 360px; height: 75px; background: #25192e; border-top: 3px solid #d97706;
+            clip-path: polygon(12% 0%, 88% 0%, 100% 35%, 92% 35%, 96% 100%, 4% 100%, 8% 35%, 0% 35%); margin-bottom: -5px; box-shadow: inset 0 10px 15px rgba(0,0,0,0.5);
+        }
+
+        .palace-front-base {
+            width: 92%; height: 120px; background: linear-gradient(180deg, #2c1b2d 0%, #17101d 100%);
+            border-top: 4px solid var(--gold); clip-path: polygon(20% 0%, 80% 0%, 85% 25%, 98% 25%, 100% 100%, 0% 100%, 2% 25%, 15% 25%); position: relative;
+        }
+
+        .imperial-stair {
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 100%;
+            background: linear-gradient(180deg, rgba(244, 196, 111, 0.4) 0%, rgba(158, 42, 43, 0.8) 100%);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%); border-left: 2px dashed var(--gold); border-right: 2px dashed var(--gold);
+        }
+
+        .watchtower {
+            position: absolute; bottom: 20px; width: 45px; height: 90px; background: #1e1324; border-top: 3px solid var(--gold);
+            clip-path: polygon(10% 0%, 90% 0%, 100% 25%, 85% 25%, 90% 100%, 10% 100%, 15% 25%, 0% 25%);
+        }
+        .watchtower.left { left: 5%; }
+        .watchtower.right { right: 5%; }
+
+        .section-heading{text-align:center;max-width:750px;margin:0 auto 42px}
+        .section-heading h2{font-size:clamp(24px,3.5vw,38px);margin-bottom:9px;color:var(--gold)}
+        .section-heading>p:last-child{color:var(--text-muted);margin:0}
+
+        /* 10大朝代網格 */
+        .dynasty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .dynasty-card{padding:22px;min-height:200px;text-align:left;background:var(--panel-bg);border:3px solid var(--panel-border);box-shadow:6px 6px 0 var(--shadow);color:var(--text-main);position:relative;overflow:hidden;transition:.2s;cursor:pointer}
+        .dynasty-card:hover{transform:translate(-3px,-4px);border-color:var(--gold);box-shadow:9px 9px 0 var(--shadow)}
+        .card-top{display:flex;justify-content:space-between;align-items:center}
+        .dynasty-card .era{font-weight:900;font-size:12px;color:var(--gold)}
+        .dynasty-card h3{margin:12px 0 6px;font-size:20px}
+        .dynasty-card p{font-size:13px;color:var(--text-muted);margin:0}
+
+        .bean-avatar {
+            width: 44px; height: 48px; position: relative; background: #2a3a5e;
+            border: 2px solid var(--gold); box-shadow: 2px 2px 0 #000;
+            display: inline-block; overflow: hidden; margin: auto;
+        }
+        .bean-face { position: absolute; top: 14px; left: 8px; width: 22px; height: 18px; background: #f1c27d; }
+        .bean-eye { position: absolute; width: 4px; height: 4px; background: #10172b; top: 20px; }
+        .bean-eye.left { left: 12px; } .bean-eye.right { left: 22px; }
+        .bean-hat { position: absolute; top: 4px; left: 5px; width: 28px; height: 10px; background: var(--gold); border: 2px solid #3d2b1f; }
+        .bean-robe { position: absolute; bottom: 0; left: 4px; width: 30px; height: 16px; background: var(--accent-red); border-top: 2px solid var(--gold); }
+
+        /* 試煉區 */
+        .trial-layout{display:grid;grid-template-columns:260px 1fr;gap:20px;align-items:start}
+        .quest-list{display:flex;flex-direction:column;gap:8px; max-height: 520px; overflow-y: auto;}
+        .quest-tab{display:flex;align-items:center;gap:9px;padding:10px 12px;border:2px solid var(--panel-border);background:var(--panel-bg);color:var(--text-muted);text-align:left;font-weight:700;cursor:pointer;font-family: inherit; font-size: 13.5px;}
+        .quest-tab.active{border-color:var(--gold);color:var(--gold);background:#25325c}
+        .quest-tab.done:after{content:"✓";margin-left:auto;color:var(--aqua);font-size:18px}
+        .tab-no{font-family:monospace;font-size:11px;color:var(--gold)}
+
+        .quest-card{border:4px solid var(--panel-border);background:var(--panel-bg);box-shadow:8px 8px 0 var(--shadow);padding:28px;min-height:480px;position:relative;transition: transform 0.2s, border-color 0.2s;}
+        .quest-card.shake { animation: shakeAnim 0.4s ease-in-out; border-color: var(--accent-red); }
+        .quest-card.pulse-green { animation: pulseGreenAnim 0.5s ease-in-out; border-color: var(--aqua); }
+
+        @keyframes shakeAnim {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-6px); }
+            80% { transform: translateX(6px); }
+        }
+
+        @keyframes pulseGreenAnim {
+            0% { box-shadow: 0 0 0 rgba(78, 205, 196, 0.8); }
+            50% { box-shadow: 0 0 25px rgba(78, 205, 196, 0.8); }
+            100% { box-shadow: 8px 8px 0 var(--shadow); }
+        }
+
+        .sub-question-nav { display: flex; gap: 10px; margin-bottom: 15px; }
+        .sub-q-btn { background: #141b30; border: 2px solid var(--panel-border); color: var(--text-muted); padding: 5px 14px; font-size: 12px; font-weight: bold; cursor: pointer; }
+        .sub-q-btn.active { border-color: var(--gold); color: var(--gold); background: #25325c; }
+        .sub-q-btn.solved { border-color: var(--aqua); color: var(--aqua); }
+
+        .quest-top{display:flex;justify-content:space-between;color:var(--text-muted);font-size:13px}
+        .era-tag{color:#111422;background:var(--gold);font-weight:900;padding:2px 10px}
+        .npc-line{display:flex;align-items:center;gap:14px;margin:15px 0 12px;border-bottom: 2px solid var(--panel-border);padding-bottom: 12px;}
+        .npc-line p{color:var(--gold);margin:0;font-weight:700;font-size:14px;}
+        .quest-card h3{font-size:20px;margin:10px 0 15px;color:#fff;}
+        .quest-prompt{color:var(--text-main);margin-bottom:20px;font-size:15px;line-height:1.7;background:rgba(0,0,0,0.3);padding:15px;border-left:4px solid var(--aqua);}
+        
+        .choices{display:grid;gap:12px}
+        .choice{color:#fff;background:#141b30;border:2px solid var(--panel-border);padding:15px;text-align:left;font-weight:700;line-height:1.55;cursor:pointer;font-family:inherit;font-size:14px;transition:0.1s;}
+        .choice:hover:not(:disabled){border-color:var(--gold);background:#25325c;transform: translateX(5px);}
+        .choice.correct{border-color:var(--aqua);background:#133b37}
+        .choice.wrong{border-color:var(--accent-red);background:#4a2226}
+        
+        .feedback{margin-top:20px;padding:16px;border-left:5px solid var(--gold);background:#141b30;color:var(--text-main);font-size:14px;line-height:1.6;}
+        .feedback.good{border-color:var(--aqua);background:#133b37;}
+
+        /* 跨朝代綜合試煉區樣式 */
+        .grand-challenge-box {
+            background: linear-gradient(135deg, #1c233f, #2e1a2f);
+            border: 4px solid var(--gold-bright);
+            box-shadow: 0 0 25px rgba(244, 196, 111, 0.2);
+            padding: 35px; margin-top: 50px; border-radius: 8px;
+        }
+
+        /* 背包與徽章系統 */
+        .bag-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+        .bag-panel{background:var(--panel-bg);border:3px solid var(--panel-border);box-shadow:6px 6px 0 var(--shadow);padding:25px}
+        .bag-panel h3{margin:0 0 18px;color:var(--gold);font-size:19px}
+        
+        .badge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+        .badge{
+            border:2px solid var(--panel-border); padding:14px; text-align:center; background:#141b30;
+            min-height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; font-size:12px; position:relative; transition: 0.2s;
+        }
+        .badge.earned{
+            border-color: var(--gold-bright); background: linear-gradient(135deg, #2b2518, #3d2f17); box-shadow: 0 0 15px rgba(244, 196, 111, 0.3);
+        }
+        .badge b{font-size:13px; color:var(--text-muted);}
+        .badge.earned b{color:var(--gold-bright); text-shadow: 0 0 5px rgba(255,215,0,0.5);}
+        .badge .scroll-count{font-size:11px; color:var(--aqua); font-weight:bold;}
+
+        .notes-list{display:grid;gap:10px}
+        .note{border-left:4px solid var(--gold);background:#141b30;padding:12px 15px}
+        .note small{display:block;color:var(--aqua);font-weight:700}
+        .note p{margin:4px 0 0;font-size:14px}
+        .empty{color:var(--text-muted);font-size:14px}
+
+        /* 卷軸彈窗 */
+        .scroll-pop-overlay {
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); z-index: 1000;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .scroll-pop-overlay.show { opacity: 1; pointer-events: auto; }
+
+        .scroll-roll-wrap {
+            display: flex; align-items: center; justify-content: center; transform: scale(0.1) rotate(-5deg);
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 600px; width: 90vw;
+        }
+        .scroll-pop-overlay.show .scroll-roll-wrap { transform: scale(1) rotate(0deg); }
+
+        .roll-axis {
+            width: 24px; height: 320px; background: linear-gradient(90deg, #3d2514, #7a4f2b, #2b180d);
+            border: 2px solid #140b06; border-radius: 4px; box-shadow: 0 0 20px rgba(0,0,0,0.8); z-index: 2;
+        }
+
+        .roll-paper {
+            background: #e8c987; border-top: 10px solid #8c2323; border-bottom: 10px solid #8c2323;
+            padding: 30px 40px; text-align: center; color: #2b1810; box-shadow: inset 0 0 25px rgba(0,0,0,0.3); flex-grow: 1; min-height: 260px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .roll-paper h2 { margin: 0 0 10px; color: #8c2323; font-size: 24px; font-weight: 900; }
+        .roll-paper p { margin: 5px 0 15px; font-size: 14px; color: #4a2e16; font-weight: 700; }
+        .roll-scroll-item {
+            background: rgba(255,255,255,0.9); border: 2px solid #a37c44; padding: 12px 20px;
+            font-size: 15px; color: #3b190e; font-weight: bold; margin-bottom: 20px; width: 100%; text-align: left;
+        }
+
+        /* 終極獎勵彈窗 */
+        .grand-reward-overlay {
+            position: fixed; inset: 0; background: rgba(10, 5, 20, 0.95); z-index: 2000;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.6s ease;
+        }
+        .grand-reward-overlay.show { opacity: 1; pointer-events: auto; }
+        .grand-reward-box {
+            background: linear-gradient(135deg, #ffd700, #ff8c00, #e6c88b); border: 8px solid #fff; padding: 40px; text-align: center; color: #2b1810;
+            box-shadow: 0 0 80px rgba(255, 215, 0, 0.9); transform: scale(0.3) rotate(-10deg);
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 650px; width: 90vw;
+        }
+        .grand-reward-overlay.show .grand-reward-box { transform: scale(1) rotate(0deg); }
+        .grand-reward-box h1 { margin: 0 0 10px; font-size: 32px; color: #8c2323; font-weight: 900; }
+
+        /* 自訂聖旨 Modal 彈窗 */
+        .custom-modal-overlay {
+            position: fixed; inset: 0; background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(5px);
+            z-index: 1000; display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .custom-modal-overlay.show { opacity: 1; pointer-events: auto; }
+
+        .royal-scroll-wrap { display: flex; align-items: center; justify-content: center; position: relative; max-width: 920px; width: 92vw; }
+        .scroll-handle { width: 28px; height: 560px; background: linear-gradient(90deg, #422917, #7a4f2b, #331f11); border: 3px solid #1a0f08; border-radius: 6px; box-shadow: 4px 4px 10px #000; z-index: 2; }
+        .scroll-content { background: #e6c88b; border-top: 14px solid #8c2323; border-bottom: 14px solid #8c2323; color: #2b1810; padding: 30px 40px; flex-grow: 1; box-shadow: inset 0 0 30px rgba(0,0,0,0.2); max-height: 85vh; overflow-y: auto; }
+        .scroll-header { display: flex; align-items: center; gap: 20px; border-bottom: 2px dashed #8c2323; padding-bottom: 15px; margin-bottom: 15px; }
+        .scroll-speech { background: rgba(140, 35, 35, 0.08); border-left: 5px solid #8c2323; padding: 12px 15px; font-size: 14.5px; font-weight: 700; line-height: 1.7; margin-bottom: 15px; color: #3b190e; }
+        
+        .read-progress-bar {
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(140, 35, 35, 0.12); border: 1.5px dashed #8c2323; padding: 8px 14px; margin-bottom: 15px; font-size: 13.5px; font-weight: 900; color: #8c2323;
+        }
+
+        .scroll-key-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 15px; }
+        
+        .scroll-key-card { 
+            background: rgba(255, 255, 255, 0.88); padding: 18px 12px; border: 2px solid #c9a66b; font-size: 15px; 
+            color: #8c2323; text-align: center; font-weight: 900; cursor: pointer; transition: all 0.25s ease;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+            position: relative; overflow: hidden;
+        }
+        .scroll-key-card:hover { background: #fff; transform: translateY(-3px); border-color: #8c2323; box-shadow: 5px 5px 0 rgba(140,35,35,0.2); }
+        .scroll-key-card .click-hint { font-size: 11px; color: #7a4f2b; font-weight: normal; }
+
+        .scroll-key-card.read {
+            background: #2a5a3b; border-color: #1e3f29; color: #f4e8c1;
+        }
+        .scroll-key-card.read .click-hint { color: #b8e0c4; }
+        .scroll-key-card.read:hover { background: #346e48; border-color: #ffd700; color: #fff; }
+
+        .focus-detail-panel { 
+            background: rgba(255, 255, 255, 0.96); border: 3px solid #8c2323; padding: 25px; margin-bottom: 15px; box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+            animation: expandScrollAnim 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes expandScrollAnim {
+            0% { opacity: 0; transform: scale(0.92) translateY(-10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .focus-detail-panel h3 { margin: 0 0 12px; color: #8c2323; font-size: 21px; font-weight: 900; border-bottom: 2px dashed #8c2323; padding-bottom: 8px; }
+        .focus-detail-panel p { margin: 0 0 14px; font-size: 14.5px; color: #2b1810; line-height: 1.85; font-weight: 700; text-align: justify; }
+        
+        .detail-block {
+            background: rgba(140, 35, 35, 0.05); border-left: 4px solid #8c2323; padding: 12px 15px; margin-bottom: 12px; font-size: 14px; color: #3b190e; line-height: 1.7;
+        }
+        .detail-block strong { color: #8c2323; }
+
+        .focus-detail-panel .exam-tip { background: #fdf3d8; border-left: 5px solid #d97706; padding: 12px 16px; font-size: 13.5px; color: #78350f; font-weight: bold; line-height: 1.6; }
+
+        .scroll-close-btn { position: absolute; top: -15px; right: 15px; background: #8c2323; color: #fff; border: 2px solid #fff; width: 36px; height: 36px; font-size: 20px; font-weight: 900; cursor: pointer; z-index: 10; box-shadow: 2px 2px 5px #000; }
+
+        .hidden{display:none!important}
+        .app-notice{position:fixed;left:50%;bottom:24px;transform:translate(-50%,160%);max-width:min(620px,90vw);z-index:3000;background:#1c233f;color:#fff;border:3px solid var(--gold);box-shadow:5px 5px 0 var(--shadow);padding:12px 18px;font-weight:700;transition:transform .25s ease;text-align:center}.app-notice.show{transform:translate(-50%,0)}
+        .quest-tab:disabled,.sub-q-btn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.5)}
+        .knowledge-lock{border:2px dashed var(--gold);background:rgba(244,196,111,.1);padding:22px;text-align:center;color:var(--gold);font-weight:700}
+        .music-toggle{border:2px solid var(--gold);background:#252d4a;color:var(--gold);padding:6px 10px;font:700 12px "Noto Sans TC",sans-serif;cursor:pointer;box-shadow:2px 2px 0 var(--shadow)}.music-toggle.on{background:var(--accent-red);color:#fff;border-color:var(--gold-bright);animation:musicPulse 1.2s steps(2,end) infinite}@keyframes musicPulse{50%{box-shadow:0 0 0 3px rgba(244,196,111,.26)}}
+        /* 古風像素場景動畫：不位移文字、不造成視覺干擾 */
+        .sun{animation:sunBreathe 5s ease-in-out infinite}.mist-layer{animation:mistDrift 11s ease-in-out infinite alternate}.main-palace-back,.main-palace-mid,.palace-front-base{animation:palaceGlow 3.5s ease-in-out infinite}.watchtower:after{content:"";position:absolute;width:8px;height:13px;top:34px;left:17px;background:#ffd36d;box-shadow:0 13px #a7434c;animation:lanternGlow 1.6s steps(2,end) infinite}.bean-avatar{animation:npcBob 2.4s steps(2,end) infinite}.dynasty-card{animation:cardEnter .45s ease both}.dynasty-card:nth-child(2n){animation-delay:.06s}.dynasty-card:nth-child(3n){animation-delay:.12s}.badge.earned{animation:badgeShine 2.2s steps(2,end) infinite}.scroll-pop-overlay.show .roll-paper{animation:paperShimmer 2.8s ease-in-out infinite}@keyframes sunBreathe{50%{transform:scale(1.08);opacity:1}}@keyframes mistDrift{from{transform:translateX(-2%)}to{transform:translateX(2%)}}@keyframes palaceGlow{50%{filter:brightness(1.16);border-color:#ffd36d}}@keyframes lanternGlow{50%{background:#fff2b2;box-shadow:0 13px #c95757,0 0 13px #ffb75e}}@keyframes npcBob{50%{transform:translateY(-2px)}}@keyframes cardEnter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes badgeShine{50%{filter:brightness(1.25);box-shadow:0 0 15px rgba(244,196,111,.65)}}@keyframes paperShimmer{50%{filter:brightness(1.08)}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+        footer{text-align:center;border-top:2px solid var(--panel-border);padding:27px;color:var(--text-muted);font-size:12px}
+        footer span{color:var(--gold);padding:0 7px}
+
+        @media(max-width:760px){
+            .hero{grid-template-columns:1fr;padding-top:40px}
+            .trial-layout,.bag-layout,.dynasty-grid{grid-template-columns:1fr}
+            .quest-list{display:grid;grid-template-columns:repeat(3,1fr); gap: 5px;}
+            .quest-tab{padding: 8px; font-size: 12px;}
+            .quest-tab .tab-label{display:none}
+            .scroll-content{padding: 20px;}
+            .scroll-key-grid{grid-template-columns: 1fr;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 華麗竹簡/聖旨卷軸展開動畫彈窗 -->
+    <div class="scroll-pop-overlay" id="scroll-pop-overlay">
+        <div class="scroll-roll-wrap">
+            <div class="roll-axis"></div>
+            <div class="roll-paper">
+                <h2 id="pop-title">🎉 成功解鎖歷史卷軸！</h2>
+                <p id="pop-subtitle">你在時空思辨中突破迷思，獲得了珍貴的會考核心卷軸：</p>
+                <div class="roll-scroll-item" id="pop-scroll-content"></div>
+                <button class="pixel-btn primary" id="pop-confirm-btn">收入時空背包 📜</button>
+            </div>
+            <div class="roll-axis"></div>
+        </div>
+    </div>
+
+    <!-- 終極大滿貫獎勵彈窗 -->
+    <div class="grand-reward-overlay" id="grand-reward-overlay">
+        <div class="grand-reward-box">
+            <h1>🏆 大滿貫通關成就！</h1>
+            <div style="font-size: 70px; margin: 15px 0;">👑📜✨</div>
+            <p id="grand-reward-text">
+                恭喜你！突破所有朝代的認知迷思，成功集齊全網核心思辨卷軸！<br>
+                獲頒最高歷史尊榮稱號：<br>
+                <strong style="font-size: 24px; color: #8c2323;">【時空終極歷史大師】</strong>
+            </p>
+            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+                <button class="pixel-btn primary" id="grand-confirm-btn">戴上大師榮耀，檢視學習筆記 🎓</button>
+                <button class="pixel-btn" id="grand-retry-btn" style="background:#252d4a; border-color:#8c2323; color:#fff;">🔄 隨機刷新題目再玩一次</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頂部導覽列 -->
+    <header class="topbar">
+        <a href="#" class="brand">
+            <div class="brand-mark">中</div>
+            <span>國中歷史核心考點探索網</span>
+        </a>
+        <nav>
+            <a href="#dynasties">10大朝代</a>
+            <a href="#trial">單一朝代考驗</a>
+            <a href="#grand-trial">跨朝代總試煉</a>
+            <a href="#bag">學習背包</a>
+            <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false">♫ 古風音樂：關</button>
+        </nav>
+    </header>
+
+    <!-- Hero 主視覺區 -->
+    <main class="section-shell hero">
+        <div>
+            <div class="eyebrow">ADDIE 模型 ✕ 認知摩擦學習系統 ✕ 黃昏暮色美學</div>
+            <h1>時空思辨歷險：<em>國中中國史核心考點探索網</em></h1>
+            <p class="lede">
+                擺脫死記硬背！沉浸於夕陽暮色宏偉宮殿意境中，完整涵蓋商周、秦、漢、魏晉南北朝、隋、唐、宋、元、明、清 10 大核心朝代，並享有深度考點解析與動態隨機抽題！
+            </p>
+            <p style="color:var(--aqua);font-size:13px;font-weight:700;">⌨ 鍵盤操作：←／→ 切換已開放朝代、1–3 選答、Esc 關閉卷軸、G 前往總試煉。</p>
+            <div class="hero-actions">
+                <a href="#dynasties" class="pixel-btn primary">📜 謁見 10 大朝代 NPC</a>
+                <a href="#trial" class="pixel-btn ghost">⚔️ 挑戰時空情境考驗</a>
+                <a href="#grand-trial" class="pixel-btn primary" style="background:#d97706;" onclick="initGrandTrial()">🔥 跨朝代動態隨機總試煉</a>
+            </div>
+        </div>
+
+        <!-- 黃昏暮色宮殿場景 -->
+        <div class="portal-scene">
+            <div class="mist-layer"></div>
+            <div class="sun"></div>
+            <div class="mountains-bg"></div>
+
+            <div class="palace-group">
+                <div class="main-palace-back"></div>
+                <div class="main-palace-mid"></div>
+                <div class="palace-front-base">
+                    <div class="imperial-stair"></div>
+                </div>
+                <div class="watchtower left"></div>
+                <div class="watchtower right"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 10 大朝代 NPC 知識解鎖區 -->
+    <section id="dynasties" class="section-shell">
+        <div class="section-heading">
+            <div class="eyebrow">CHINESE HISTORY 10 DYNASTY NODES</div>
+            <h2>選擇 10 大朝代 NPC 展開深度聖旨對話</h2>
+            <p>點擊下方各朝代代表人物，點擊 9 大深度考點標籤即可展開查看高頻會考詳解內容。</p>
+        </div>
+        <div class="dynasty-grid" id="dynasty-grid"></div>
+    </section>
+
+    <!-- 時空穿越者情境考驗區 -->
+    <section id="trial" class="section-shell trial-section">
+        <div class="section-heading">
+            <div class="eyebrow">TIME TRAVELER COGNITIVE TRIAL</div>
+            <h2>時空穿越者情境思辨考驗（10 大朝代各 3 題）</h2>
+            <p>將知識轉化為生活抉擇。透過情境思辨檢視歷史因果，挑戰成功即可解鎖珍貴的會考核心卷軸！</p>
+        </div>
+
+        <div class="trial-layout">
+            <div class="quest-list" id="quest-tabs"></div>
+            <div class="quest-card" id="quest-card">
+                <div class="sub-question-nav" id="sub-q-nav"></div>
+                <div class="quest-top">
+                    <span id="q-dynasty-name">載入中...</span>
+                    <span class="era-tag" id="q-era-tag">會考重點考題</span>
+                </div>
+                <div class="npc-line">
+                    <div id="q-avatar-box"></div>
+                    <p id="q-npc-title">NPC 導師提示</p>
+                </div>
+                <h3 id="q-title">請選擇朝代開始挑戰</h3>
+                <p class="quest-prompt" id="q-prompt">請點擊左側任一朝代或由上方選單切換題目。</p>
+                <div class="choices" id="q-choices"></div>
+                <div class="feedback hidden" id="q-feedback">
+                    <p id="feedback-text" style="margin:0;"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 跨朝代終極大總攬綜合挑戰區 -->
+        <div id="grand-trial" class="grand-challenge-box">
+            <div class="section-heading" style="margin-bottom: 25px;">
+                <div class="eyebrow" style="color:var(--gold-bright);">CROSS-DYNASTY DYNAMIC RANDOM TRIAL</div>
+                <h2 style="color:var(--gold-bright);">🔥 跨朝代核心概念動態隨機大考驗</h2>
+                <p style="color:var(--text-muted);">每次點擊刷新或重新挑戰，題庫皆會從龐大題庫池中隨機抽題！橫向比較賦稅、選官、對外與中央集權演變。</p>
+                <div style="margin-top: 15px;">
+                    <button class="pixel-btn primary" style="background:#d97706; padding:8px 16px; font-size:13px;" onclick="initGrandTrial()">🔄 隨機換一批新題目</button>
+                </div>
+            </div>
+
+            <div class="quest-card" id="grand-quest-card" style="border-color:var(--gold-bright); background:rgba(17, 20, 34, 0.9);">
+                <div class="sub-question-nav" id="grand-nav"></div>
+                <div class="quest-top">
+                    <span id="g-tag-name" style="color:var(--gold-bright); font-weight:bold;">跨朝代動態試煉 1 / 3</span>
+                    <span class="era-tag" style="background:var(--accent-red); color:#fff;">會考大總攬題</span>
+                </div>
+                <div class="npc-line">
+                    <div style="font-size:30px;">👑📜</div>
+                    <p style="color:var(--gold-bright);">時空總歷史官出題：</p>
+                </div>
+                <h3 id="g-title" style="color:var(--gold-bright);">題目載入中...</h3>
+                <p class="quest-prompt" id="g-prompt" style="border-left-color:var(--gold-bright);">情境載入中...</p>
+                <div class="choices" id="g-choices"></div>
+                <div class="feedback hidden" id="g-feedback">
+                    <p id="g-feedback-text" style="margin:0;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 時空背包與學習歷程筆記 -->
+    <section id="bag" class="section-shell bag-section">
+        <div class="section-heading">
+            <div class="eyebrow">INVENTORY & LEARNING NOTES</div>
+            <h2>時空背包與已收集卷軸</h2>
+            <p>挑戰情境題，解鎖 10 大朝代各 3 大卷軸（全網共 30 張會考核心卷軸）！</p>
+        </div>
+
+        <div class="bag-layout">
+            <div class="bag-panel">
+                <h3>🎒 10 大朝代封印與卷軸庫 (每個朝代 3 張卷軸)</h3>
+                <div class="badge-grid" id="badge-grid"></div>
+            </div>
+            <div class="bag-panel">
+                <h3>📜 歷史思辨深度學習筆記</h3>
+                <div class="notes-list" id="notes-list">
+                    <div class="empty">尚未完成任何情境考驗，通關後將自動紀錄深度思辨心得！</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 全螢幕古典聖旨對話視窗 -->
+    <div class="custom-modal-overlay" id="scroll-dialog-overlay">
+        <div class="royal-scroll-wrap">
+            <div class="scroll-handle"></div>
+            <div class="scroll-content" style="position: relative;">
+                <button class="scroll-close-btn" id="dialog-close">&times;</button>
+                <div class="scroll-header">
+                    <div id="dialog-avatar-box"></div>
+                    <div>
+                        <h2 id="dialog-name">NPC 名字</h2>
+                        <p id="dialog-dynasty">朝代</p>
+                    </div>
+                </div>
+                <div class="scroll-speech" id="dialog-npc-speech">NPC 對話台詞載入中...</div>
+                <div class="exam-tip" id="dialog-history-brief">時代快覽載入中...</div>
+                
+                <div class="read-progress-bar">
+                    <span>📜 奉天承運・點擊下方【核心考點標籤】深度解析：</span>
+                    <span id="read-progress-counter" style="color:#d97706;">已閱覽：0 / 9</span>
+                </div>
+
+                <div class="scroll-key-grid" id="dialog-focus-grid"></div>
+
+                <div class="focus-detail-panel hidden" id="dialog-focus-detail">
+                    <h3 id="detail-title">【考點名稱】</h3>
+                    <p id="detail-content">考點詳細背景與內容說明...</p>
+                    
+                    <div class="detail-block" id="detail-context-block">
+                        <strong>📜 歷史因果脈絡：</strong><span id="detail-context-text">背景分析...</span>
+                    </div>
+
+                    <div class="detail-block" id="detail-trap-block" style="border-left-color: var(--accent-red);">
+                        <strong style="color:var(--accent-red);">⚠️ 會考常見陷阱與易錯點：</strong><span id="detail-trap-text">陷阱分析...</span>
+                    </div>
+
+                    <div class="exam-tip" id="detail-tip">💡 會考應試關鍵：掌握本考點的因果關係與常見陷阱！</div>
+                    <div style="margin-top: 18px; text-align: right;">
+                        <button class="pixel-btn ghost" id="detail-back-btn" style="border-color:#8c2323; color:#8c2323;">🔙 返回 9 大考點標籤列表</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px; text-align: right;">
+                    <button class="pixel-btn primary" id="dialog-to-trial-btn">⚔️ 接受挑戰以解鎖 3 大卷軸 ➔</button>
+                </div>
+            </div>
+            <div class="scroll-handle"></div>
+        </div>
+    </div>
+    <div id="app-notice" class="app-notice" role="status" aria-live="polite"></div>
+
+    <footer>
+        <p>國中中國史核心考點探索網 <span>|</span> 黃昏暮色美學 <span>|</span> © 2026</p>
+    </footer>
+
+    <!-- JavaScript 完整邏輯 (10 大朝代，內容全面豐富化) -->
+    <script>
+        let audioCtx = null;
+        let bgmTimer = null;
+        let bgmStep = 0;
+        let musicEnabled = false;
+        function getAudioCtx() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            return audioCtx;
+        }
+        function playTone(freq, start, duration, type = 'triangle', volume = 0.035) {
+            if (!musicEnabled) return;
+            const ctx = getAudioCtx(), osc = ctx.createOscillator(), gain = ctx.createGain();
+            osc.type = type; osc.frequency.setValueAtTime(freq, ctx.currentTime + start);
+            gain.gain.setValueAtTime(volume, ctx.currentTime + start);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + start + duration);
+            osc.connect(gain); gain.connect(ctx.destination); osc.start(ctx.currentTime + start); osc.stop(ctx.currentTime + start + duration + 0.03);
+        }
+        function startBgm() {
+            if (bgmTimer) return;
+            const melody = [523, 0, 587, 659, 0, 659, 587, 523, 494, 0, 440, 494, 523, 0, 440, 0];
+            const harmony = [262, 0, 330, 0, 294, 0, 262, 0];
+            const beat = () => {
+                const note = melody[bgmStep % melody.length];
+                if (note) playTone(note, 0.005, 0.17, 'triangle', 0.024);
+                if (bgmStep % 2 === 0) { const low = harmony[(bgmStep / 2) % harmony.length]; if (low) playTone(low, 0.005, 0.24, 'sine', 0.018); }
+                bgmStep++;
+            };
+            beat(); bgmTimer = setInterval(beat, 220);
+        }
+        function stopBgm() { if (bgmTimer) { clearInterval(bgmTimer); bgmTimer = null; } }
+        
+        function playSound(type) {
+            if (!musicEnabled) return;
+            const audioCtx = getAudioCtx();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+
+            if (type === 'scroll_open') {
+                osc.type = 'triangle'; osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(800, now + 0.4);
+                gain.gain.setValueAtTime(0.2, now); gain.gain.linearRampToValueAtTime(0.01, now + 0.5);
+                osc.start(now); osc.stop(now + 0.5);
+            } else if (type === 'card_expand') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(329.63, now);
+                osc.frequency.setValueAtTime(659.25, now + 0.08);
+                gain.gain.setValueAtTime(0.18, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+                osc.start(now); osc.stop(now + 0.35);
+            } else if (type === 'win') {
+                osc.type = 'sine'; osc.frequency.setValueAtTime(523.25, now); osc.frequency.setValueAtTime(659.25, now + 0.1);
+                gain.gain.setValueAtTime(0.15, now); gain.gain.linearRampToValueAtTime(0.01, now + 0.4);
+                osc.start(now); osc.stop(now + 0.4);
+            } else if (type === 'grand_win') {
+                [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+                    const o = audioCtx.createOscillator();
+                    const g = audioCtx.createGain();
+                    o.connect(g); g.connect(audioCtx.destination);
+                    o.frequency.setValueAtTime(freq, now + idx * 0.12);
+                    g.gain.setValueAtTime(0.15, now + idx * 0.12);
+                    g.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.12 + 0.3);
+                    o.start(now + idx * 0.12); o.stop(now + idx * 0.12 + 0.3);
+                });
+            } else if (type === 'wrong') {
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, now); osc.frequency.linearRampToValueAtTime(60, now + 0.25);
+                gain.gain.setValueAtTime(0.2, now); gain.gain.linearRampToValueAtTime(0.01, now + 0.25);
+                osc.start(now); osc.stop(now + 0.25);
+            }
+        }
+
+        // 10 大完整朝代詳盡資料庫
+        const dynastiesData = [
+            {
+                id: 'shang_zhou', name: '商周時期', era: '約前1600 - 前256', npcName: '周公旦', title: '禮樂宗法締造者',
+                speech: '「欲治天下，先正封建與宗法。周初大封同姓功臣以屏藩周室，然血緣疏遠之後，宗法與封建能否長存？諸侯坐大，禮樂征伐自諸侯出，此乃天下大亂之始也！」',
+                focusPoints: [
+                    { title: '1. 分封制與宗法制之互為表裡', content: '分封制為「政治權力的分配」（授土授民），宗法制為「家族血緣的規範」（大宗小宗）；兩者互為表裡，以嫡長子繼承制維繫政治穩定。', context: '周公攝政制禮作樂，確立封建體制，用血緣紐帶鞏固周天子「天下共主」地位。', trap: '常考陷阱：誤以為分封制只有同姓，實際上亦包含異姓貴族與前代聖王後裔（如宋國微子啟）。' },
+                    { title: '2. 春秋戰國之社會經濟大變局', content: '鐵器牛耕之推廣使生產力大幅提升，私田大量出現，井田制崩解；各國紛紛變法圖強，士階層崛起。', context: '鐵製農具與牛耕普及促使自耕農經濟成形，宗法封建秩序無法負荷。', trap: '常考陷阱：鐵器時代始於春秋（春秋晚期鐵器漸多），戰國則全面普及，商周青銅器主要用於禮器與兵器。' },
+                    { title: '3. 百家爭鳴與思想流派核心', content: '儒家（仁義禮樂）、道家（清靜無為）、法家（嚴刑峻法）、墨家（兼愛非攻），對後世政治與文化影響深遠。', context: '亂世之中士人周遊列國獻策，推動思想自由與學術繁榮。', trap: '常考陷阱：秦朝統一後主要採納法家思想，但漢代「外儒內法、道法參用」，並非單一思想。' },
+                    { title: '4. 井田制的瓦解與賦稅變革', content: '因私田興起與土地買賣自由，西周國有的井田制名存實亡，戰國各國改行按畝收稅。', context: '生產力提升打破土地國有共耕制。', trap: '會考常將井田制與均田制混淆，需注意井田制為商周貴族土地所有制。' },
+                    { title: '5. 宗法制下的嫡長子繼承與禮樂崩壞', content: '平王東遷後周室衰微，諸侯不再朝貢，周禮名存實亡。', context: '犬戎之禍後周王室東遷洛邑，政治中心轉移。', trap: '春秋五霸與戰國七雄的爭霸性質不同，春秋尊王攘夷，戰國兼併統一。' },
+                    { title: '6. 士階層的崛起與養士風氣', content: '貴族沒落釋出大量人才，戰國四公子養士蔚為風氣，推動知識下移。', context: '學在官府轉為學在民間。', trap: '孔子創辦私學打破教育壟斷。' },
+                    { title: '7. 戰國變法運動之實質成效', content: '商鞅變法獎勵耕戰、廢井田、開阡陌，使秦國成為法家霸權。', context: '法家集權體制奠定秦統一天下基礎。', trap: '商鞅變法觸犯舊貴族利益但富國強兵。' },
+                    { title: '8. 春秋霸主與戰國七雄差異', content: '春秋爭霸多以「尊王攘夷」為號召；戰國七雄則是全面消滅對手以求統一。', context: '時代由宗法秩序轉為激烈的兼併戰爭。', trap: '晉國韓趙魏三家分晉與田氏代齊為戰國開始的重要標誌。' },
+                    { title: '9. 青銅文化的工藝與政治象徵', content: '商周青銅器（如司母戊鼎、毛公鼎）銘文記載冊封與歷史事件，兼具藝術與史料價值。', context: '青銅為「國之大事，在祀與戎」的物化象徵。', trap: '青銅器主要出土於王室與高等貴族墓葬。' }
+                ],
+                scrolls: ['【宗法封建卷軸】', '【鐵器牛耕卷軸】', '【百家爭鳴卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：周公封建的血緣考驗',
+                        prompt: '身為西周初年的王室宗親，周天子將你封在偏遠邊陲建立諸侯國。請問在建立封建體制的初期，你與周天子的權利義務關係為何？',
+                        choices: ['A. 天子直接派遣官吏管理並徵收所有賦稅', 'B. 擁有領地世襲統治權與軍事指揮權，但須對天子定期朝貢、出兵勤王', 'C. 領地屬於私人財產，可隨時轉賣', 'D. 與周天子完全平等，無須遵守禮樂'],
+                        correct: 1,
+                        feedback: '【答對了！】受封諸侯享有世襲統治權，但負有朝貢、述職與勤王義務。'
+                    },
+                    {
+                        title: '情境考驗 2：春秋戰國的經濟變革',
+                        prompt: '鐵製農具與牛耕技術普及後，民間紛紛開墾「私田」。請問這對當時的土地制度造成了什麼根本衝擊？',
+                        choices: ['A. 井田制崩解，土地開始允許私有與買賣', 'B. 農業產量下降，糧荒頻傳', 'C. 周天子收回所有私田', 'D. 奴隸制度更加鞏固'],
+                        correct: 0,
+                        feedback: '【答對了！】鐵器牛耕大幅提升生產力，私田開墾促使井田制瓦解。'
+                    },
+                    {
+                        title: '情境考驗 3：百家爭鳴的政治抉擇',
+                        prompt: '主張「隆禮重法」、「性惡論」，認為須透過後天教育與禮樂規範導正百姓的思想家是？',
+                        choices: ['A. 莊子', 'B. 荀子', 'C. 韓非子', 'D. 墨子'],
+                        correct: 1,
+                        feedback: '【答對了！】荀子主張性惡論，強調師法教化與禮樂規範。'
+                    }
+                ]
+            },
+            {
+                id: 'qin', name: '秦朝', era: '前221 - 前206', npcName: '秦始皇', title: '始皇帝與大一統締造者',
+                speech: '「朕統轄六合，廢分封、置郡縣，書同文、車同軌、統一度量衡！築萬里長城以拒匈奴。然焚書坑儒、苛政暴虐，二世而亡，然郡縣集權萬世流芳！」',
+                focusPoints: [
+                    { title: '1. 廢分封置郡縣之中央集權', content: '全面推行郡縣制，官吏由中央皇帝任免、有任期、不可世襲，徹底消滅春秋戰國以來割據隱患。', context: '秦朝確立了中國兩千年的中央官僚體制基石。', trap: '常考陷阱：郡縣制官員由中央派任，切勿與世襲封建混淆。' },
+                    { title: '2. 經濟與文化統一大業', content: '實行書同文（通行小篆）、車同軌、統一度量衡與發行圓形方孔半兩錢。', context: '促進全國經濟文化融合與政令暢通。', trap: '常考陷阱：貨幣統一為圓形方孔半兩錢，結束戰國貨幣混亂。' },
+                    { title: '3. 思想控制與焚書坑儒', content: '聽從李斯建議焚燒民間史書、禁私學，坑殺違法方士，以法家思想治國。', context: '加強思想統制確保政權穩定。', trap: '常考陷阱：醫藥、卜筮、種樹之書不在焚燒之列。' },
+                    { title: '4. 北擊匈奴築萬里長城', content: '派大將蒙恬北擊匈奴收復河套，修築西起臨洮東至遼東的萬里長城。', context: '鞏固帝國北方邊防抵禦遊牧民族。', trap: '常考陷阱：秦長城是在戰國秦、趙、燕長城基礎上連接修建。' },
+                    { title: '5. 法家思想與嚴刑峻法', content: '重用李斯推行法家嚴刑峻法，輕罪重罰，強調耕戰政策與連坐法。', context: '法家極權統治的頂峰。', trap: '常考陷阱：過苛法制激化社會矛盾加速秦亡。' },
+                    { title: '6. 暴政繁役與大澤鄉起義', content: '修建阿房宮與驪山陵墓，徭役繁重，陳勝吳廣在大澤鄉揭竿起義。', context: '秦末民變爆發敲響亡國喪鐘。', trap: '常考陷阱：「失期，法皆斬」是起義導火線。' },
+                    { title: '7. 圓形方孔半兩錢之流通', content: '統一全國貨幣為半兩錢，便利了商業交易與中央賦稅徵收。', context: '經濟規範化的重要里程碑。', trap: '常考陷阱：各國舊幣全面禁絕。' },
+                    { title: '8. 創立皇帝制度與三公九卿', content: '自稱「始皇帝」，中央設丞相、太尉、御史大夫（三公），總攬軍國大權。', context: '君主專制政體正式成形。', trap: '常考陷阱：皇帝擁有至高無上的絕對權力。' },
+                    { title: '9. 秦朝短命而亡之歷史教訓', content: '秦朝暴政速亡使漢代吸取教訓，轉而實行休養生息與外儒內法。', context: '歷史興亡的重大借鏡。', trap: '常考陷阱：秦代實際國祚僅短短15年。' }
+                ],
+                scrolls: ['【郡縣一統卷軸】', '【焚書法家卷軸】', '【長城暴政卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：秦始皇的郡縣抉擇',
+                        prompt: '秦始皇統一六國後，丞相李斯力主全面推行郡縣制而非分封制。請問郡縣制對中央集權最大的好處是？',
+                        choices: ['A. 讓皇室親族享有世襲領地', 'B. 官吏由中央任免且無世襲特權，徹底防止諸侯割據', 'C. 地方長官可自行鑄造貨幣', 'D. 免除所有百姓的賦稅與勞役'],
+                        correct: 1,
+                        feedback: '【答對了！】郡縣長官由中央派遣且不得世襲，徹底消除了地方割據隱患。'
+                    },
+                    {
+                        title: '情境考驗 2：秦代統一經濟措施',
+                        prompt: '秦始皇為了便利全國經濟交流與政令推行，下令實施的經濟與文化標準化政策不包含下列何者？',
+                        choices: ['A. 書同文（通行小篆）', 'B. 車同軌、統一度量衡', 'C. 廢除郡縣制恢復世襲封建', 'D. 統一使用圓形方孔半兩錢'],
+                        correct: 2,
+                        feedback: '【答對了！】秦代廢除的是分封制，全面推行郡縣制，並統一文字、車軌、度量衡與貨幣。'
+                    },
+                    {
+                        title: '情境考驗 3：秦末民變起義',
+                        prompt: '陳勝、吳廣在大澤鄉起義時，遭遇了哪一項秦朝嚴苛的法律規定導致被迫鋌而走險？',
+                        choices: ['A. 規定百姓不得食用五穀雜糧', 'B. 規定逾期到達戍守地點「失期，法皆斬」', 'C. 強制所有百姓必須出家為僧', 'D. 禁止民間私下使用任何鐵器'],
+                        correct: 1,
+                        feedback: '【答對了！】秦朝法律極為嚴苛，遇雨延誤行程「失期，法皆斬」，逼得陳勝吳廣揭竿起義。'
+                    }
+                ]
+            },
+            {
+                id: 'han', name: '漢朝', era: '前202 - 220', npcName: '漢武帝', title: '大一統與武功極盛',
+                speech: '「漢承秦制，外儒內法！朕推恩令削弱諸侯，罷黜百家獨尊儒術，設太學。派張騫通西域開絲路，北擊匈奴，揚我大漢天威！」',
+                focusPoints: [
+                    { title: '1. 漢初休養生息與道家無為', content: '漢初吸取秦亡教訓，實行道家「清靜無為」與和親政策，休養生息恢復社會經濟。', context: '文景之治為武帝大一統奠定富庶基礎。', trap: '常考陷阱：漢初經濟迅速恢復有賴無為而治。' },
+                    { title: '2. 漢武帝推恩令巧妙削藩', content: '採納主父偃推恩令，允許諸侯將封地分封給所有子弟，使封國越分越小而自然瓦解。', context: '巧妙利用宗法原則解決諸侯割據隱患。', trap: '常考陷阱：推恩令未動用刀兵便削弱王國勢力。' },
+                    { title: '3. 罷黜百家獨尊儒術與太學', content: '採納董仲舒建議「罷黜百家，獨尊儒術」，並設立太學培訓儒家官僚。', context: '儒學正式成為中國兩千年政治正統。', trap: '常考陷阱：政治實務上仍採外儒內法、道法參用。' },
+                    { title: '4. 張騫通西域與絲路開通', content: '派遣張騫兩次出使西域，打通歐亞陸上絲綢之路，促進東西方經濟文化交流。', context: '拓展中華帝國的國際視野與貿易。', trap: '常考陷阱：佛教於東漢明帝時透過絲路傳入。' },
+                    { title: '5. 北擊匈奴與河西走廊', content: '派衛青、霍去病大破匈奴，奪取河套與河西走廊，保障絲路安全。', context: '徹底解決北方遊牧民族長期威脅。', trap: '常考陷阱：昭君出塞發生在西漢元帝時期。' },
+                    { title: '6. 鹽鐵酒專賣與均輸平準', content: '實行鹽鐵酒專賣與均輸平準政策，將經濟大權收歸中央以充實國庫。', context: '漢武帝應付對外戰爭的財政手段。', trap: '常考陷阱：曾召開鹽鐵會議引發儒法論辯。' },
+                    { title: '7. 東漢豪族與莊園經濟興起', content: '東漢豪強地主大量兼併土地，建立擁有部曲私人武裝的莊園經濟。', context: '東漢基層社會與政治結構轉變。', trap: '常考陷阱：東漢政權建立有賴豪族支持。' },
+                    { title: '8. 蔡倫改良造紙術', content: '東漢蔡倫以樹皮、麻頭、舊漁網改良造紙術，使書寫材料大幅普及。', context: '推動知識與文化傳播的偉大科技發明。', trap: '常考陷阱：蔡倫為「改良」而非「發明」。' },
+                    { title: '9. 東漢外戚宦官專權與黨錮', content: '幼主即位導致外戚與宦官輪流專權，士人清議批評引發黨錮之禍。', context: '東漢末年政治敗壞加速滅亡。', trap: '常考陷阱：黨錮之禍徹底打擊正直士大夫。' }
+                ],
+                scrolls: ['【推恩太學卷軸】', '【絲路西域卷軸】', '【豪族宦官卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：漢武帝的推恩妙策',
+                        prompt: '面對各諸侯王國勢力強大，漢武帝採納主父偃之策推行「推恩令」。請問這項政策巧妙之處在於？',
+                        choices: ['A. 強令收回所有封地歸國有', 'B. 允許諸侯將封地分封給所有子弟，使封國越分越小而自然瓦解', 'C. 免除所有諸侯王的賦稅', 'D. 將諸侯王強制流放邊疆'],
+                        correct: 1,
+                        feedback: '【答對了！】推恩令使封國越分越小，無須動用刀兵便瓦解了王國勢力。'
+                    },
+                    {
+                        title: '情境考驗 2：罷黜百家獨尊儒術',
+                        prompt: '漢武帝採納哪一位儒生的大一統建議，確立了儒學在中國古代政治與教育上的正統地位？',
+                        choices: ['A. 孔子', 'B. 孟子', 'C. 董仲舒', 'D. 朱熹'],
+                        correct: 2,
+                        feedback: '【答對了！】董仲舒向漢武帝提出「罷黜百家，獨尊儒術」，確立儒學正統。'
+                    },
+                    {
+                        title: '情境考驗 3：張騫出使西域',
+                        prompt: '漢武帝派遣張騫通西域最主要的軍事與外交戰略初衷為何？',
+                        choices: ['A. 為了尋找失落的寶藏', 'B. 為了聯合大月氏夾擊匈奴，並開拓對外交通', 'C. 為了將儒家思想傳播到歐洲', 'D. 為了尋求海上貿易霸權'],
+                        correct: 1,
+                        feedback: '【答對了！】張騫出使西域最初是為了聯絡大月氏夾擊匈奴，客觀上打通了絲路。'
+                    }
+                ]
+            },
+            {
+                id: 'swei_jin', name: '魏晉南北朝', era: '220 - 589', npcName: '王羲之', title: '魏晉風度與門閥士族',
+                speech: '「曹魏創九品中正制，遂使『上品無寒門，下品無士族』。五胡亂華，衣冠南渡，江南開發。竹林七賢清談玄學，書法繪畫藝術達到空前審美高峰！」',
+                focusPoints: [
+                    { title: '1. 三國鼎立與西晉短暫統一', content: '曹魏、蜀漢、孫吳對峙，後西晉短暫統一但爆發八王之亂引發混亂。', context: '中國歷史上政權分裂與分合交替期。', trap: '常考陷阱：赤壁之戰奠定三國鼎立基礎。' },
+                    { title: '2. 九品中正制與門閥士族壟斷', content: '曹魏創立九品中正制選拔官員，後演變成按門第高低選官，「上品無寒門，下品無士族」。', context: '士族門閥政治的興起與世襲壟斷。', trap: '常考陷阱：九品中正制後期嚴重流於形式與門第特權。' },
+                    { title: '3. 五胡亂華與衣冠南渡建東晉', content: '永嘉之禍後北方遊牧民族內遷建立十六國，中原漢人衣冠南渡建立東晉。', context: '民族大融合與南北對峙的序幕。', trap: '常考陷阱：五胡內遷與中原政權南渡改變人口分佈。' },
+                    { title: '4. 南北朝經濟與江南開發', content: '北方長期戰亂，南方在東晉與南朝時大量開發，長江流域經濟漸具規模。', context: '中國古代經濟重心南移的重要前期。', trap: '常考陷阱：江南逐漸成為全國糧倉魚米之鄉。' },
+                    { title: '5. 玄學清談與魏晉風度', content: '士人崇尚老莊玄學、不拘禮法、清談飲酒，展現獨特的魏晉風度與精神自由。', context: '亂世中的思想解放與人格覺醒。', trap: '常考陷阱：竹林七賢為魏晉清談代表人物。' },
+                    { title: '6. 佛教盛行與石窟藝術高峰', content: '亂世之中佛教大興，敦煌莫高窟、雲岡石窟、龍門石窟開鑿興盛。', context: '宗教哲學與雕刻藝術達歷史高峰。', trap: '常考陷阱：梁武帝崇佛多次捨身同泰寺。' },
+                    { title: '7. 北魏孝文帝全面漢化改革', content: '鮮卑族北魏孝文帝遷都洛陽、穿漢服、說漢話、改漢姓，推動民族大融合。', context: '中國歷史上規模宏大的民族融合。', trap: '常考陷阱：漢化政策促進融合但也削弱鮮卑軍事戰力。' },
+                    { title: '8. 祖沖之與科學輝煌成就', content: '祖沖之將圓周率計算到小數點後七位，並編製《大明曆》。', context: '魏晉南北朝科學技術的光輝成果。', trap: '常考陷阱：比歐洲早了一千多年。' },
+                    { title: '9. 書法藝術大師王羲之', content: '王羲之《蘭亭集序》被譽為天下第一行書，使書法藝術正式獨立。', context: '文學與藝術審美的大爆發。', trap: '常考陷阱：楷書、行書、草書在此时成熟。' }
+                ],
+                scrolls: ['【九品門閥卷軸】', '【五胡漢化卷軸】', '【魏晉風度卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：九品中正制的門閥壟斷',
+                        prompt: '魏晉南北朝時期推行「九品中正制」，本意是用來公正評定人才，但後來演變成由地方中正官按哪一項標準來決定仕途？',
+                        choices: ['A. 考試成績的高低', 'B. 家世門第（門閥高低），導致上品無寒門', 'C. 經商財富的多少', 'D. 個人武藝與軍功大小'],
+                        correct: 1,
+                        feedback: '【答對了！】九品中正制後期演變成按門第選官，形成「上品無寒門，下品無士族」的門閥壟斷。'
+                    },
+                    {
+                        title: '情境考驗 2：北魏孝文帝漢化政策',
+                        prompt: '鮮卑族建立的北魏孝文帝為了鞏固統治、促進民族融合，推行了哪一項重大改革？',
+                        choices: ['A. 強令全體鮮卑人遷回漠北草原', 'B. 遷都洛陽、說漢話、穿漢服、改漢姓', 'C. 禁止漢人與鮮卑人通婚', 'D. 廢除所有漢文化典籍'],
+                        correct: 1,
+                        feedback: '【答對了！】孝文帝推行全面漢化政策，遷都洛陽並推行服飾、語言、姓氏改革。'
+                    },
+                    {
+                        title: '情境考驗 3：魏晉玄學與清談風氣',
+                        prompt: '魏晉時期士人面對動盪亂世，崇尚老莊哲學、不拘禮法並經常聚集清談。這種現象被歷史上稱為什麼？',
+                        choices: ['A. 貞觀之風', 'B. 魏晉風度', 'C. 八股之風', 'D. 永樂盛世'],
+                        correct: 1,
+                        feedback: '【答對了！】魏晉士人透過玄學清談與特立獨行，展現了追求精神自由的「魏晉風度」。'
+                    }
+                ]
+            },
+            {
+                id: 'sui', name: '隋朝', era: '581 - 618', npcName: '隋文帝', title: '隋代時空引導者',
+                speech: '「朕代周立隋，統一南北，開皇之治使國庫豐盈。作為此時代的引導者，我要帶你辨認其後隋煬帝開鑿大運河、設進士科等制度變革；也要思考大型工程與對外戰事如何使政權迅速失衡。」',
+                focusPoints: [
+                    { title: '1. 隋朝統一南北與開皇之治', content: '隋文帝楊堅結束魏晉南北朝分裂局面，厲行節儉與均田，開創政治清明的「開皇之治」。', context: '國家統一與社會經濟迅速恢復。', trap: '常考陷阱：開皇之治時官府倉庫儲糧極其豐實。' },
+                    { title: '2. 創立進士科與科舉制度', content: '隋煬帝正式設置「進士科」，標誌著中國科舉制度的誕生。', context: '打破門閥壟斷選拔庶族人才。', trap: '常考陷阱：科舉始於隋煬帝，唐代進一步完善。' },
+                    { title: '3. 開鑿京杭大運河', content: '以洛陽為中心，貫通永濟渠、通濟渠、邗溝與江南河，溝通五大水系。', context: '連接南北交通與物資運輸的大動脈。', trap: '常考陷阱：運河促進經濟但勞民傷財加速隋亡。' },
+                    { title: '4. 三省六部制之萌芽與確立', content: '隋代整合中央官制，奠定唐代中書、門下、尚書三省六部運作的雛形。', context: '中央行政機構的重大革新。', trap: '常考陷阱：唐代發展最為完備成熟。' },
+                    { title: '5. 均田制與租庸調制之推行', content: '隋代繼承北朝推行均田制與租庸調制，確保國家賦稅來源與兵源。', context: '維繫均田自耕農經濟的支柱。', trap: '常考陷阱：隋唐初年賦稅與土地制度的基礎。' },
+                    { title: '6. 隋煬帝暴政與三征高麗', content: '頻繁大興土木修建宮室與運河，並三征高麗耗盡民力。', context: '隋朝二世而亡的直接導火線。', trap: '常考陷阱：激起全國大規模農民起義。' },
+                    { title: '7. 統一貨幣與度量衡標準', content: '隋文帝廢除北朝雜亂舊幣，發行五銖錢，統一全國度量衡。', context: '經濟規範化與中央集權的展現。', trap: '常考陷阱：鞏固了南北經濟一體化。' },
+                    { title: '8. 隋末民變與唐朝建立', content: '群雄並起，李淵父子自晉陽起兵攻入長安建立唐朝。', context: '中國歷史上的政權交替。', trap: '常考陷阱：隋朝國祚僅短短三十餘年。' },
+                    { title: '9. 隋代對後世之深遠貢獻', content: '運河暢通經濟、科舉選拔人才，制度為唐朝盛世奠定厚實基礎。', context: '短命而極具歷史歷史價值的王朝。', trap: '常考陷阱：富庶但因濫用民力而速亡。' }
+                ],
+                scrolls: ['【開皇盛世卷軸】', '【大運河創立卷軸】', '【科舉誕生卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：隋朝開皇之治的成就',
+                        prompt: '隋文帝統一天下後，勵精圖治使國家政治清明、倉庫儲糧豐實，史稱「開皇之治」。請問下列哪一項制度也是在隋代正式創立的？',
+                        choices: ['A. 九品中正制', 'B. 創立進士科的「科舉制度」', 'C. 內閣大學士制度', 'D. 軍機處跪受筆錄制度'],
+                        correct: 1,
+                        feedback: '【答對了！】隋代正式創立進士科，開啟了影響中國一千多年的科舉選官制度。'
+                    },
+                    {
+                        title: '情境考驗 2：隋朝大運河的修建',
+                        prompt: '隋煬帝大興土木開鑿以哪一個城市為中心的大運河，打通了南北水運交通？',
+                        choices: ['A. 長安', 'B. 洛陽', 'C. 南京', 'D. 成都'],
+                        correct: 1,
+                        feedback: '【答對了！】隋代大運河以洛陽為中心，北抵涿郡，南達余杭，貫通南北。'
+                    },
+                    {
+                        title: '情境考驗 3：隋朝速亡的關鍵原因',
+                        prompt: '隋朝雖然物力富庶、制度完善，但為什麼僅短短三十餘年便二世而亡？',
+                        choices: ['A. 因為全面恢復分封制導致諸侯叛亂', 'B. 因為煬帝窮兵駢誅、三征高麗、濫用民力激起民變', 'C. 因為氣候變遷導致長年大旱糧荒', 'D. 因為全面廢除科舉導致無人做官'],
+                        correct: 1,
+                        feedback: '【答對了！】隋煬帝頻繁遠征高麗與大興土木，耗盡民力引發群雄起義而亡。'
+                    }
+                ]
+            },
+            {
+                id: 'tang', name: '唐朝', era: '618 - 907', npcName: '唐太宗', title: '貞觀之治與天可汗',
+                speech: '「以銅為鏡，可以正衣冠；以史為鏡，可以知興替。朕開科舉、行三省，四海歸心、萬邦來朝。盛唐氣象，長安為世界國際大都會也！」',
+                focusPoints: [
+                    { title: '1. 貞觀之治與納諫如流', content: '唐太宗虛心納諫（重用魏徵），勵精圖治開創政治清明的「貞觀之治」。', context: '君臣協力開創盛唐政治典範。', trap: '常考陷阱：水能載舟亦能覆舟的民本思想。' },
+                    { title: '2. 完善三省六部與科舉選才', content: '中書草擬、門下審議、尚書執行；進一步完善科舉（明經與進士科）。', context: '中央集權行政機制的黃金期。', trap: '常考陷阱：門下省擁有審議與封駁權。' },
+                    { title: '3. 武則天稱帝與政績承先啟後', content: '中國歷史上唯一女皇帝，改國號周，承先啟後促進經濟發展並打擊門閥。', context: '政權平穩過渡與庶族崛起。', trap: '常考陷阱：重用寒門庶族削弱關隴集團。' },
+                    { title: '4. 開元盛世與唐玄宗前期', content: '唐玄宗前期勵精圖治，政治清明、經濟繁榮，史稱「開元盛世」。', context: '盛唐文治武功的最高峰。', trap: '常考陷阱：唐玄宗晚期怠政寵信楊貴妃。' },
+                    { title: '5. 安史之亂與唐朝由盛轉衰', content: '安祿山、史思明叛亂爆發，雖平定但造成藩鎮割據與宦官專權。', context: '唐代命運的重大轉折樞紐。', trap: '常考陷阱：唐朝自此一蹶不振。' },
+                    { title: '6. 兩稅法財政制度革新', content: '安史之亂後楊炎推行兩稅法，改以資產與土地為主，分夏秋兩次徵收。', context: '賦稅制度由人頭稅轉向財產稅。', trap: '常考陷阱：適應土地兼併與經濟現實。' },
+                    { title: '7. 長安國際大都會與胡漢融合', content: '人口百萬、胡漢融合，各國使節與商人雲集，佛教與景教流行。', context: '開放包容多元的盛唐社會。', trap: '常考陷阱：坊市嚴格分開且有夜禁宵禁。' },
+                    { title: '8. 盛唐文學詩歌藝術頂峰', content: '詩仙李白、詩聖杜甫、書法顏真卿，唐詩達到中國文學史最高峰。', context: '文學藝術與審美的極盛期。', trap: '常考陷阱：唐詩成為科舉考試項目。' },
+                    { title: '9. 玄奘西行與佛教中國化', content: '玄奘赴天竺取經譯經，促進中印文化交流與禪宗大興。', context: '宗教哲學與文化繁榮的象徵。', trap: '常考陷阱：歷史玄奘為獨自偷渡往返。' }
+                ],
+                scrolls: ['【貞觀納諫卷軸】', '【安史藩鎮卷軸】', '【長安氣象卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：唐太宗的納諫治國',
+                        prompt: '唐太宗李世民常說「以銅為鏡，可以正衣冠；以史為鏡，可以知興替；以人為鏡，可以明得失」。請問他倚重哪一位大臣作為一面鏡子，經常直言進諫？',
+                        choices: ['A. 秦檜', 'B. 魏徵', 'C. 和珅', 'D. 來俊臣'],
+                        correct: 1,
+                        feedback: '【答對了！】唐太宗極度虛心納諫，魏徵敢於直言進諫，兩人相得益彰促成貞觀之治。'
+                    },
+                    {
+                        title: '情境考驗 2：唐代三省六部制的運作',
+                        prompt: '在唐代三省六部制中，若皇帝下達的政令經中書省草擬後，在哪一個部門審議時被認為不妥而行使「封駁權」退回？',
+                        choices: ['A. 門下省', 'B. 吏部', 'C. 戶部', 'D. 工部'],
+                        correct: 0,
+                        feedback: '【答對了！】門下省負責審議並擁有封駁權，可將不合理政令退回重議。'
+                    },
+                    {
+                        title: '情境考驗 3：唐代安史之亂的影響',
+                        prompt: '唐代天寶年間爆發的「安史之亂」，對唐朝帝國帶來最深遠的負面影響為何？',
+                        choices: ['A. 使唐朝經濟完全崩潰且不再與外國貿易', 'B. 造成中央對地方控制減弱，形成藩鎮割據與由盛轉衰局勢', 'C. 廢除科舉制度改用世襲推薦', 'D. 首都永遠遷至廣州'],
+                        correct: 1,
+                        feedback: '【答對了！】安史之亂是唐代由盛轉衰的樞紐，此後地方節度使擁兵自重形成藩鎮割據。'
+                    }
+                ]
+            },
+            {
+                id: 'song', name: '宋朝', era: '960 - 1279', npcName: '宋太祖', title: '杯酒釋兵權與文人政治',
+                speech: '「朕杯酒釋兵權，重文輕武。京師禁軍輪流戍邊，以防武將專權。然積弱不振，澶淵之盟後歲幣冗官冗兵，靖康之恥令人痛心疾首！」',
+                focusPoints: [
+                    { title: '1. 杯酒釋兵權與重文輕武國策', content: '宋太祖趙匡胤解除禁軍將領兵權，確立重文輕武與文人政治國策以防內亂。', context: '吸取五代十國武人亂政教訓。', trap: '常考陷阱：成功杜絕內亂但也導致軍事積弱。' },
+                    { title: '2. 三冗危機與龐大財政負擔', content: '因養兵百萬與官員龐大導致「冗官、冗兵、冗費」，引發嚴重的國家財政危機。', context: '北宋中後期面臨的結構性困局。', trap: '常考陷阱：三冗問題拖垮國家財政。' },
+                    { title: '3. 王安石變法與新舊黨爭', content: '神宗時王安石推行新法希望富國強兵，但因用人引發新舊黨爭導致內耗。', context: '北宋中後期的大規模改革運動。', trap: '常考陷阱：司馬光為舊黨代表堅決反對新法。' },
+                    { title: '4. 經濟重心南移與交子誕生', content: '江南成為全國經濟財政重心（「蘇湖熟，天下足」）；四川誕生全球最早紙幣交子。', context: '南方商業大繁榮與金融創新。', trap: '常考陷阱：經濟重心南移完成於南宋。' },
+                    { title: '5. 三大發明與科技光芒', content: '活字印刷術（畢昇）、指南針應用於航海、火藥廣泛應用於軍事。', context: '中國古代科技發展的最高峰。', trap: '常考陷阱：大幅降低書籍成本推動知識普及。' },
+                    { title: '6. 朱熹理學與三綱五常', content: '南宋朱熹集程朱理學之大成，強調「存天理，滅人欲」與三綱五常約束人心。', context: '宋代以後士人思想與社會規範正統。', trap: '常考陷阱：深刻影響明清士人與社會風氣。' },
+                    { title: '7. 靖康之恥與宋金對峙', content: '金兵攻陷汴京俘虜徽欽二帝；趙構南渡建立南宋，岳飛抗金劃淮河而治。', context: '北方異族壓迫與南北分裂。', trap: '常考陷阱：秦檜以莫須有罪名殺害岳飛。' },
+                    { title: '8. 市民文化與瓦子勾欄', content: '城市夜市繁榮，娛樂場所瓦子勾欄與說書雜劇興起。', context: '庶民娛樂與通俗文學的黃金時代。', trap: '常考陷阱：宋詞（蘇軾、李清照、辛棄疾）極盛。' },
+                    { title: '9. 海外貿易與市舶司設立', content: '宋朝因陸路受阻大力發展海上絲路，設置「市舶司」管理海外貿易。', context: '海上絲綢之路與港口繁榮。', trap: '常考陷阱：泉州、廣州為重要海外貿易港。' }
+                ],
+                scrolls: ['【重文輕武卷軸】', '【交子南移卷軸】', '【理學岳飛卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：宋太祖的國策抉擇',
+                        prompt: '宋太祖趙匡胤為防止武將叛亂採取「杯酒釋兵權」與重文輕武政策。這項政策最直接帶來的負面影響是？',
+                        choices: ['A. 文人地位低落形同虛設', 'B. 國防軍事力量薄弱（積弱不振），對遼夏作戰屢處劣勢', 'C. 中央集權徹底瓦解', 'D. 南方經濟陷入極度貧困'],
+                        correct: 1,
+                        feedback: '【答對了！】重文輕武成功杜絕內亂，但也導致軍隊戰力低落，形成積弱局勢。'
+                    },
+                    {
+                        title: '情境考驗 2：經濟重心南移與交子',
+                        prompt: '北宋末年至南宋，中國經濟重心正式完成南移。當時四川民間商業出現了哪一項金融創新？',
+                        choices: ['A. 首次發行黃金鑄幣', 'B. 全球最早的紙幣「交子」', 'C. 廢除銅錢全面以物易物', 'D. 設立海關壟斷貿易'],
+                        correct: 1,
+                        feedback: '【答對了！】因鐵錢攜帶不便，北宋四川商人發行了世界最早的紙幣「交子」。'
+                    },
+                    {
+                        title: '情境考驗 3：王安石變法的初衷',
+                        prompt: '北宋神宗時，哪一位大臣推行青苗法、募役法等新法，希望達到「富國強兵」的目的？',
+                        choices: ['A. 張居正', 'B. 王安石', 'C. 司馬光', 'D. 李鴻章'],
+                        correct: 1,
+                        feedback: '【答對了！】王安石在宋神宗支持下推行新法，希望改善北宋財政與軍事危機。'
+                    }
+                ]
+            },
+            {
+                id: 'yuan', name: '元朝', era: '1271 - 1368', npcName: '忽必烈', title: '蒙古帝國與行省創立',
+                speech: '「朕創建元朝，定都大都。創設行中書省管理廣大領土，推行四等人制。馬可波羅東來，東西方交流頻繁。然民族矛盾尖銳，終為明朝所取代！」',
+                focusPoints: [
+                    { title: '1. 蒙古帝國崛起與元朝建立', content: '成吉思汗統一蒙古各部建立帝國，忽必烈建立元朝定都大都（北京）。', context: '橫跨歐亞大陸的空前大帝國。', trap: '常考陷阱：蒙古帝國版圖為中國歷史上面積最廣。' },
+                    { title: '2. 行中書省（行省制）創設', content: '元朝為管理廣大領土，在中央設中書省，地方設行中書省（行省）。', context: '地方行政制度的重大革新。', trap: '常考陷阱：奠定了後代省區劃分的基礎。' },
+                    { title: '3. 四等人制度與民族階級', content: '將全國人口分為蒙古人、色目人、漢人、南人四等，政治待遇懸殊。', context: '元朝嚴苛的民族壓迫政策。', trap: '常考陷阱：漢人和南人受到嚴厲歧視與限制。' },
+                    { title: '4. 元曲與雜劇大繁榮', content: '元代散曲與雜劇大興（如關漢卿《竇娥冤》），市井庶民文化高度發達。', context: '繼唐詩宋詞後的元代文學代表。', trap: '常考陷阱：元曲反映社會現實與悲喜。' },
+                    { title: '5. 東西交通暢通與馬可波羅', content: '四大汗國維持驛站暢通，義大利人馬可波羅來華，東西方交流達到頂峰。', context: '陸上與海上絲路空前暢通。', trap: '常考陷阱：《馬可波羅遊記》風靡歐洲。' },
+                    { title: '6. 伊斯蘭科學與曆法傳入', content: '伊斯蘭的天文、曆法、醫學與回回炮等技術傳入中國，郭守敬編製《授時曆》。', context: '多元文明交融的豐碩成果。', trap: '常考陷阱：《授時曆》精準度極高。' },
+                    { title: '7. 鈔法發行與紙幣流通', content: '元朝全面推行紙幣（中統鈔、至元寶鈔），禁止民間金銀私相交易。', context: '世界最早全面使用紙幣的朝代。', trap: '常考陷阱：後期因濫發紙幣導致惡性通膨。' },
+                    { title: '8. 宗教多元並存政策', content: '元朝對佛教（藏傳佛教/喇嘛教）、道教、伊斯蘭教與基督教皆採取寬容保護政策。', context: '多元宗教信仰並存。', trap: '常考陷阱：八思巴被元世祖尊為帝師。' },
+                    { title: '9. 紅巾軍起義與元朝滅亡', content: '元末政治腐敗、水患頻傳爆發紅巾軍起義，朱元璋建立明朝北伐滅元。', context: '中國歷史上的政權交替。', trap: '常考陷阱：元朝退回蒙古草原稱北元。' }
+                ],
+                scrolls: ['【行省大一統卷軸】', '【四等人制卷軸】', '【元曲馬可波羅卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：元代地方行政制度',
+                        prompt: '元朝領土空前遼闊，為了有效統治全國，中央設立中書省並在各地設置了哪一項對後世影響深遠的地方行政機構？',
+                        choices: ['A. 郡縣制', 'B. 行中書省（行省制）', 'C. 刺史制度', 'D. 督撫制度'],
+                        correct: 1,
+                        feedback: '【答對了！】元代為管理龐大帝國，創設行中書省，奠定了後代省區劃分的基礎。'
+                    },
+                    {
+                        title: '情境考驗 2：元代的民族階級制度',
+                        prompt: '元朝統治者為了維護特權，將全國人口劃分為四等階級。其中原金朝統治下的北方漢人與女真、契丹人被歸類在哪一等？',
+                        choices: ['A. 蒙古人', 'B. 色目人', 'C. 漢人', 'D. 南人'],
+                        correct: 2,
+                        feedback: '【答對了！】四等人制依序為蒙古人、色目人、漢人（原金統治下漢等）、南人（原南宋漢人）。'
+                    },
+                    {
+                        title: '情境考驗 3：元代文學與庶民藝術',
+                        prompt: '元代文學發展的代表形式為繼唐詩、宋詞之後的哪一種文學？其中代表作有《竇娥冤》？',
+                        choices: ['A. 漢賦', 'B. 元曲與雜劇', 'C. 明清章回小說', 'D. 現代新詩'],
+                        correct: 1,
+                        feedback: '【答對了！】元代雜劇與散曲（元曲）大興，關漢卿的《竇娥冤》為悲劇不朽名作。'
+                    }
+                ]
+            },
+            {
+                id: 'ming', name: '明朝', era: '1368 - 1644', npcName: '明太祖朱元璋', title: '廢宰相與特務錦衣衛',
+                speech: '「朕出身貧寒，最惡貪官！故廢除丞相，由皇帝一人總攬軍國大件。明代設錦衣衛，鄭和下西洋揚威海外。八股取士箝制思想，然大明風骨永存！」',
+                focusPoints: [
+                    { title: '1. 明太祖廢丞相與君主集權新高', content: '朱元璋廢除自秦漢以來的宰相制度，由皇帝直接指揮六部，君主專制達新高。', context: '強化皇帝個人獨裁消滅宰相。', trap: '常考陷阱：內閣大學士並非合法宰相。' },
+                    { title: '2. 廠衛特務與嚴酷廷杖制度', content: '設置錦衣衛、東廠等廠衛特務機構監控百官，實行殘酷的廷杖。', context: '明代恐怖的政治高壓統治。', trap: '常考陷阱：宦官藉廠衛權力干政敗壞朝綱。' },
+                    { title: '3. 八股取士與思想嚴格箝制', content: '科舉考試限定於四書五經與八股文格式，嚴格箝制知識分子思想與發揮。', context: '鞏固儒家正統與絕對忠君。', trap: '常考陷阱：禁止考生發表個人原創見解。' },
+                    { title: '4. 鄭和下西洋與朝貢海禁', content: '明成祖派鄭和七下西洋到達非洲東海岸；後為防範倭寇實行海禁。', context: '朝貢外交與防禦型的對外政策。', trap: '常考陷阱：鄭和下西洋並非殖民掠奪。' },
+                    { title: '5. 張居正一條鞭法財政改革', content: '萬曆年間張居正推行一條鞭法，賦役合一、一律徵收白銀。', context: '明代賦稅制度重大簡便化。', trap: '常考陷阱：美洲白銀大量流入中國。' },
+                    { title: '6. 利瑪竇東來與西學東漸', content: '義大利傳教士利瑪竇來華，翻譯《幾何原本》，帶入西方科學技術。', context: '晚明士人掀起中西文化交流。', trap: '常考陷阱：開啟經世致用與學習西學熱潮。' },
+                    { title: '7. 明代四大奇書與白話小說', content: '《三國演義》、《水滸傳》、《西遊記》、《金瓶梅》繁榮，市民文學鼎盛。', context: '白話章回小說的黃金時期。', trap: '常考陷阱：反映市民審美與社會批判。' },
+                    { title: '8. 東林黨爭與宦官專權', content: '明代中後期魏忠賢等宦官專權，東林黨人清議批評引發政治內耗。', context: '明朝末年政治黑暗的縮影。', trap: '常考陷阱：閹黨與東林黨鬥爭激烈。' },
+                    { title: '9. 李自成起義與明朝覆滅', content: '崇禎年間旱災與財政崩潰，李自成攻陷北京，明思宗殉國。', context: '大明王朝覆滅與清軍入關。', trap: '常考陷阱：吳三桂引清兵入關擊敗李自成。' }
+                ],
+                scrolls: ['【廢相錦衣衛卷軸】', '【鄭和一條鞭卷軸】', '【小說西學卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：明太祖廢丞相的深遠影響',
+                        prompt: '明太祖朱元璋下令處死胡惟庸並正式「廢除丞相制度」。請問這項重大變革對中央政治結構最大的改變為何？',
+                        choices: ['A. 皇帝直接領導六部，君主專制集權達到空前高度', 'B. 內閣大學士成為合法宰相', 'C. 恢復分封制', 'D. 宦官失去參政機會'],
+                        correct: 0,
+                        feedback: '【答對了！】廢除丞相後皇帝直轄六部，宰相制度消失，君主專制達頂峰。'
+                    },
+                    {
+                        title: '情境考驗 2：張居正的一條鞭法',
+                        prompt: '明代萬曆年間張居正推行「一條鞭法」。請問這項賦稅改革最核心的內容為何？',
+                        choices: ['A. 強制百姓一律繳納糧食不得繳納貨幣', 'B. 將各項賦稅與勞役合併為一條，一律折算成白銀徵收', 'C. 廢除所有田賦改向商人抽稅', 'D. 僅向皇室宗親徵收賦稅'],
+                        correct: 1,
+                        feedback: '【答對了！】一條鞭法將各項賦役合一並一律折銀徵收，便利了白銀流通。'
+                    },
+                    {
+                        title: '情境考驗 3：鄭和下西洋的歷史性質',
+                        prompt: '明成祖派遣鄭和七下西洋，遠達非洲東海岸與紅海。這項壯舉最主要的歷史性質與目的為何？',
+                        choices: ['A. 為了海外殖民掠奪與開闢黃金礦山', 'B. 為了宣揚大明國威與推行朝貢外交，並非殖民擴張', 'C. 為了與歐洲展開工業品競爭', 'D. 為了逃避國內戰亂'],
+                        correct: 1,
+                        feedback: '【答對了！】鄭和下西洋是政治與外交宣威，並非以殖民掠奪資本累積為目的。'
+                    }
+                ]
+            },
+            {
+                id: 'qing', name: '清朝', era: '1644 - 1912', npcName: '雍正帝', title: '軍機處與攤丁入畝',
+                speech: '「朕勤政愛民，因西北用兵設軍機處，跪受筆錄集權頂峰！推行攤丁入畝減輕貧民負擔。康乾盛世，然閉關鎖國終致鴉片戰爭，三千年未有之大變局！」',
+                focusPoints: [
+                    { title: '1. 滿人入關與因俗而治邊疆', content: '滿洲八旗入關建立清朝，對蒙古、西藏、新疆採取因俗而治與喇嘛教籠絡政策。', context: '龐大帝國穩固的邊疆治理體系。', trap: '常考陷阱：清代設立理藩院專門管理邊疆事務。' },
+                    { title: '2. 雍正設立軍機處集權頂峰', content: '雍正帝因西北用兵設軍機處，軍機大臣跪受筆錄，君主專制達歷史最高峰。', context: '決策效率極高且完全聽命於皇帝。', trap: '常考陷阱：原議政王大臣會議與內閣權力被架空。' },
+                    { title: '3. 文字獄與極端思想嚴管', content: '清代大興文字獄，嚴加審查士人著作，箝制反清思想與言論自由。', context: '極端嚴苛的思想統治與言論恐怖。', trap: '常考陷阱：康雍乾三朝文字獄極為頻繁。' },
+                    { title: '4. 攤丁入畝與人口破四億', content: '雍正推行攤丁入畝，將固定人頭稅併入田賦徵收，免除無地貧民負擔。', context: '賦稅制度公平化刺激人口激增。', trap: '常考陷阱：促使中國人口在清代突破四億大關。' },
+                    { title: '5. 康乾盛世與版圖奠定', content: '康熙、雍正、乾隆三朝平定三藩、收復台灣、擊敗準噶爾，奠定現代中國版圖。', context: '盛世景象與秋海棠版圖極盛。', trap: '常考陷阱：奠定現代中國領土的基礎。' },
+                    { title: '6. 閉關鎖國與一口通商', content: '清廷長期實行海禁，僅留廣東廣州「十三行」一口通商，盲目自大。', context: '近代前夕的內顧與落後危機。', trap: '常考陷阱：無法跟上西方工業革命腳步。' },
+                    { title: '7. 鴉片戰爭與近代歷史開端', content: '英國發動鴉片戰爭（1840），清廷戰敗簽訂《南京條約》，開啟半殖民地半封建社會。', context: '中國近代史的悲劇轉折點。', trap: '常考陷阱：割讓香港島賠款開港通商。' },
+                    { title: '8. 太平天國與晚清自強運動', content: '洪秀全發動太平天國之亂動搖統治，地方漢族地主湘淮軍崛起，推行自強運動。', context: '內憂外患交迫下的晚清自救。', trap: '常考陷阱：曾國藩、李鴻章推行洋務運動。' },
+                    { title: '9. 辛亥革命與千年帝制終結', content: '孫中山領導辛亥革命爆發（1911），武昌起義成功，建立中華民國，結束兩千年帝制。', context: '民主共和時代的來臨。', trap: '常考陷阱：末代皇帝溥儀宣佈退位。' }
+                ],
+                scrolls: ['【軍機處文字獄卷軸】', '【攤丁入畝盛世卷軸】', '【鴉片戰爭辛亥卷軸】'],
+                trials: [
+                    {
+                        title: '情境考驗 1：雍正帝設立軍機處',
+                        prompt: '清代雍正帝因為西北用兵需要保密與迅速決策，設立了「軍機處」。請問軍機大臣的職責與運作特點為何？',
+                        choices: ['A. 擁有獨立否決皇帝旨意的立法權', 'B. 跪受筆錄、承旨遵辦，是皇帝處理軍國大政的御用祕書機構', 'C. 由滿洲八大貴族世襲', 'D. 專門負責審判貪腐的獨立法院'],
+                        correct: 1,
+                        feedback: '【答對了！】軍機大臣跪受筆錄、承旨遵辦，使清代決策效率極高且君主集權達頂峰。'
+                    },
+                    {
+                        title: '情境考驗 2：雍正攤丁入畝的稅制突破',
+                        prompt: '清代推行「攤丁入畝」政策，將固定的人頭稅平均攤入田賦中徵收。請問這項改革帶來最重要的影響為何？',
+                        choices: ['A. 使無地貧民免除沉重人頭稅負擔，促使清代人口突破四億', 'B. 強制富豪交出所有土地', 'C. 廢除所有田賦', 'D. 規定一律改繳白銀'],
+                        correct: 0,
+                        feedback: '【答對了！】攤丁入畝使無地貧民免除人頭稅，大大刺激了人口增長。'
+                    },
+                    {
+                        title: '情境考驗 3：鴉片戰爭的歷史意義',
+                        prompt: '1840年爆發的「鴉片戰爭」對中國歷史發展而言，最大的標誌性意義為何？',
+                        choices: ['A. 中國正式成為世界工業第一強國', 'B. 中國由傳統獨立封建社會開始淪為半殖民地半封建社會', 'C. 清朝順利收復所有失土', 'D. 徹底廢除了所有不平等條約'],
+                        correct: 1,
+                        feedback: '【答對了！】鴉片戰爭失敗標誌著中國近代史的開端，逐步淪為半殖民地半封建社會。'
+                    }
+                ]
+            }
+        ];
+
+        // 跨朝代動態隨機題庫池 (每次點擊刷新隨機抽 3 題)
+        const masterGrandPool = [
+            {
+                title: '跨朝代動態總試煉：賦稅制度演變脈絡',
+                prompt: '從漢代的編戶齊民、唐初租庸調、兩稅法、明代一條鞭法到清代攤丁入畝，中國賦稅制度的核心趨勢為何？',
+                choices: ['A. 賦稅日益繁複且強制勞役', 'B. 由重實物與人頭控制，逐漸演變為賦役合一、簡便化及按財產田地徵收', 'C. 歷代朝廷皆取消土地稅', 'D. 賦稅制度完全停滯不前'],
+                correct: 1,
+                feedback: '【答對了！】賦稅演變顯示國家對人頭控制放寬，走向賦役合一與按產徵稅。'
+            },
+            {
+                title: '跨朝代動態總試煉：選官制度轉變軌跡',
+                prompt: '從先秦世卿世祿、漢代察舉、魏晉九品中正到隋唐科舉，選官制度的演變反映了？',
+                choices: ['A. 門閥世族永久世襲', 'B. 選拔標準由重視門第逐漸轉為憑藉考試才學，促進社會流動', 'C. 皇帝放棄人事權', 'D. 選官與中央集權無關'],
+                correct: 1,
+                feedback: '【答對了！】科舉制打破門閥壟斷，使寒門庶族得以憑才學向上流動。'
+            },
+            {
+                title: '跨朝代動態總試煉：對外關係政策轉向',
+                prompt: '漢唐時期對外開放、萬國來朝；而明清時期則長期實行海禁與閉關鎖國。其關鍵因果關係為何？',
+                choices: ['A. 海外完全沒有貿易價值', 'B. 為了防範沿海倭寇、反清勢力及天朝心態，由開放轉為防禦內顧', 'C. 漢唐從不重視國防', 'D. 閉關鎖國避開了工業革命'],
+                correct: 1,
+                feedback: '【答對了！】因倭寇侵擾、防範內亂及天朝心態，明清逐漸走向閉關鎖國。'
+            },
+            {
+                title: '跨朝代動態總試煉：中央官制與君主集權',
+                prompt: '從秦漢的三公九卿、隋唐的三省六部到明代廢丞相、清代設軍機處，中央官制的演變體現了？',
+                choices: ['A. 相權逐漸擴大與宰相共治天下', 'B. 皇權不斷強化、相權遭到削減直至廢除，君主專制達頂峰', 'C. 中央官員完全由地方選舉產生', 'D. 三省六部制度歷代完全沒有改變'],
+                correct: 1,
+                feedback: '【答對了！】中央官制演變的核心即是皇權的不斷擴大與相權的被剝奪。'
+            },
+            {
+                title: '跨朝代動態總試煉：經濟重心轉移與商業發展',
+                prompt: '中國古代經濟重心自黃河流域轉移至長江流域，並在宋代以後全面確立。這對經濟與文化造成了？',
+                choices: ['A. 北方經濟完全荒廢無人居住', 'B. 江南成為全國財政財富核心，帶動紙幣、海外貿易與市民文化繁榮', 'C. 促使朝廷將首都永久遷至廣州', 'D. 導致海上絲綢之路徹底斷絕'],
+                correct: 1,
+                feedback: '【答對了！】江南開發成為財政重心，推動了交子紙幣與市民文化的蓬勃。'
+            }
+        ];
+
+        let activeGrandTrials = [];
+        let earnedBadges = loadState('earnedBadges', {});
+        let learningNotes = loadState('learningNotes', []);
+        let currentDynastyId = 'shang_zhou';
+        let currentTrialIndex = 0;
+        let currentGrandIndex = 0;
+        let activeDialogDynasty = null;
+        let readFocusMap = loadState('readFocusMap', {});
+        let grandSolved = [];
+
+        function loadState(key, fallback) {
+            try { return JSON.parse(localStorage.getItem(`historyRift.${key}`)) ?? fallback; }
+            catch { return fallback; }
+        }
+        function saveState() {
+            localStorage.setItem('historyRift.earnedBadges', JSON.stringify(earnedBadges));
+            localStorage.setItem('historyRift.learningNotes', JSON.stringify(learningNotes));
+            localStorage.setItem('historyRift.readFocusMap', JSON.stringify(readFocusMap));
+        }
+        function showNotice(message) {
+            const el = document.getElementById('app-notice');
+            el.textContent = message; el.classList.add('show');
+            clearTimeout(showNotice.timer);
+            showNotice.timer = setTimeout(() => el.classList.remove('show'), 2800);
+        }
+        function isKnowledgeComplete(dynastyId) {
+            const dynasty = dynastiesData.find(d => d.id === dynastyId);
+            return !!dynasty && dynasty.focusPoints.every((_, i) => readFocusMap[dynastyId]?.[i]);
+        }
+        function isDynastyComplete(dynastyId) {
+            const dynasty = dynastiesData.find(d => d.id === dynastyId);
+            return !!dynasty && dynasty.trials.every((_, i) => earnedBadges[dynastyId]?.[i]);
+        }
+        function canAccessDynasty(index) {
+            return index === 0 || isDynastyComplete(dynastiesData[index - 1].id);
+        }
+        function allDynastiesComplete() { return dynastiesData.every(d => isDynastyComplete(d.id)); }
+
+        function initApp() {
+            renderDynastyCards();
+            renderBadgeGrid();
+            setupTrialTabs();
+            loadTrialQuestion(0);
+            initGrandTrial(true);
+        }
+
+        function initGrandTrial(allowLockedPreview = false) {
+            if (!allowLockedPreview && !allDynastiesComplete()) {
+                showNotice('跨朝代總試煉尚未開啟：請先完成十個朝代的全部三題任務。');
+                return false;
+            }
+            if (!allowLockedPreview) playSound('scroll_open');
+            currentGrandIndex = 0;
+            let shuffled = [...masterGrandPool];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            activeGrandTrials = shuffled.slice(0, 3);
+            grandSolved = [false, false, false];
+            setupGrandNav();
+            loadGrandQuestion(0);
+            return true;
+        }
+
+        const allDynastiesMeta = [
+            { id: 'shang_zhou', name: '商周時期', era: '約前1600 - 前256', npc: '周公旦', desc: '封建宗法、禮樂征伐、鐵器牛耕百家爭鳴' },
+            { id: 'qin', name: '秦朝', era: '前221 - 前206', npc: '秦始皇', desc: '郡縣一統、書同文、焚書坑儒法家集權' },
+            { id: 'han', name: '漢朝', era: '前202 - 220', npc: '漢武帝', desc: '推恩削藩、獨尊儒術、張騫通西域絲路' },
+            { id: 'swei_jin', name: '魏晉南北朝', era: '220 - 589', npc: '王羲之', desc: '九品中正、五胡華夏、江南開發與玄學' },
+            { id: 'sui', name: '隋朝', era: '581 - 618', npc: '隋文帝', desc: '開皇盛世、大運河創立、進士科舉誕生' },
+            { id: 'tang', name: '唐朝', era: '618 - 907', npc: '唐太宗', desc: '貞觀之治、三省六部、盛唐開放長安' },
+            { id: 'song', name: '宋朝', era: '960 - 1279', npc: '宋太祖', desc: '重文輕武、經濟南移、交子與三大發明' },
+            { id: 'yuan', name: '元朝', era: '1271 - 1368', npc: '忽必烈', desc: '行省制度、四等人制、元曲與馬可波羅' },
+            { id: 'ming', name: '明朝', era: '1368 - 1644', npc: '明太祖', desc: '廢除丞相、錦衣衛特務、鄭和下西洋' },
+            { id: 'qing', name: '清朝', era: '1644 - 1912', npc: '雍正帝', desc: '軍機集權、攤丁入畝、閉關與鴉片戰爭' }
+        ];
+        const eraBriefs = {
+            shang_zhou:'時代快覽：從分封、宗法與禮樂秩序，走向鐵器牛耕、變法與百家爭鳴；這是封建秩序瓦解、帝國即將出現的轉折期。',
+            qin:'時代快覽：秦以郡縣、法令與標準化整合廣大區域，同時也因徭役與嚴刑峻法累積社會反彈。',
+            han:'時代快覽：漢在中央集權與儒學官學化之間建立長期制度，並透過西域與絲路連結更廣的世界。',
+            swei_jin:'時代快覽：分裂與遷徙促使民族、宗教與生活文化互動；人口南遷也為江南經濟發展奠定基礎。',
+            sui:'時代快覽：隋完成南北統一，並以運河與考試選才重整帝國；但大型工程與戰事也使政權快速失衡。',
+            tang:'時代快覽：唐代長安呈現都會、宗教與族群交流；安史之亂後，藩鎮與地方勢力則改變國家權力結構。',
+            song:'時代快覽：宋代都市、印刷、紙幣與市民文化興盛，經濟重心南移與文官政治共同塑造新社會樣貌。',
+            yuan:'時代快覽：蒙古帝國擴大歐亞陸路交流，行省與站赤協助治理；但不同身分群體的地位並不平等。',
+            ming:'時代快覽：明初集權加強，官方航海、民間海商、白銀與新作物使東亞進入更緊密的全球網絡。',
+            qing:'時代快覽：清代疆域與人口擴張，同時在貿易管制、思想控制與中外衝突中面臨近代世界的挑戰。'
+        };
+
+        function renderDynastyCards() {
+            const grid = document.getElementById('dynasty-grid');
+            grid.innerHTML = '';
+            allDynastiesMeta.forEach(d => {
+                const card = document.createElement('div');
+                card.className = 'dynasty-card';
+                card.innerHTML = `
+                    <div class="card-top">
+                        <span class="era">${d.era}</span>
+                        <div class="bean-avatar">
+                            <div class="bean-hat"></div>
+                            <div class="bean-face"></div>
+                            <div class="bean-eye left"></div>
+                            <div class="bean-eye right"></div>
+                            <div class="bean-robe"></div>
+                        </div>
+                    </div>
+                    <h3>${d.name}</h3>
+                    <p>NPC 導師：${d.npc}</p>
+                    <p style="margin-top:6px; color:var(--aqua);">${d.desc}</p>
+                    <div style="margin-top:14px;">
+                        <button class="pixel-btn primary" style="padding:6px 12px; font-size:12px;" onclick="openScrollDialog('${d.id}')">📜 謁見 NPC 聽解考點</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openScrollDialog(dynastyId) {
+            playSound('scroll_open');
+            const data = dynastiesData.find(x => x.id === dynastyId);
+            if (!data) return;
+            activeDialogDynasty = dynastyId;
+
+            document.getElementById('dialog-name').innerText = data.npcName + ' (' + data.title + ')';
+            document.getElementById('dialog-dynasty').innerText = data.name + ' (' + data.era + ')';
+            document.getElementById('dialog-npc-speech').innerText = data.speech;
+            document.getElementById('dialog-history-brief').innerText = eraBriefs[dynastyId] || '';
+
+            const avatarBox = document.getElementById('dialog-avatar-box');
+            avatarBox.innerHTML = `
+                <div class="bean-avatar" style="transform: scale(1.2);">
+                    <div class="bean-hat"></div>
+                    <div class="bean-face"></div>
+                    <div class="bean-eye left"></div>
+                    <div class="bean-eye right"></div>
+                    <div class="bean-robe"></div>
+                </div>
+            `;
+
+            if (!readFocusMap[dynastyId]) readFocusMap[dynastyId] = {};
+            updateReadProgressCounter();
+
+            const grid = document.getElementById('dialog-focus-grid');
+            grid.innerHTML = '';
+            data.focusPoints.forEach((fp, idx) => {
+                const isRead = readFocusMap[dynastyId][idx];
+                const card = document.createElement('div');
+                card.className = 'scroll-key-card' + (isRead ? ' read' : '');
+                card.innerHTML = `
+                    <span>${fp.title}</span>
+                    <span class="click-hint">${isRead ? '✓ 已深度閱覽' : '點擊查看詳解 ➔'}</span>
+                `;
+                card.onclick = () => showFocusDetail(dynastyId, idx);
+                grid.appendChild(card);
+            });
+
+            document.getElementById('dialog-focus-detail').classList.add('hidden');
+            document.getElementById('dialog-focus-grid').classList.remove('hidden');
+            document.getElementById('scroll-dialog-overlay').classList.add('show');
+        }
+
+        function updateReadProgressCounter() {
+            const dynastyMap = readFocusMap[activeDialogDynasty] || {};
+            const count = Object.keys(dynastyMap).filter(k => dynastyMap[k]).length;
+            document.getElementById('read-progress-counter').innerText = `已閱覽：${count} / 9`;
+        }
+
+        function showFocusDetail(dynastyId, idx) {
+            playSound('card_expand');
+            const data = dynastiesData.find(x => x.id === dynastyId);
+            const fp = data.focusPoints[idx];
+
+            if (!readFocusMap[dynastyId]) readFocusMap[dynastyId] = {};
+            readFocusMap[dynastyId][idx] = true;
+            saveState();
+            updateReadProgressCounter();
+
+            const grid = document.getElementById('dialog-focus-grid');
+            const cards = grid.children;
+            if (cards[idx]) {
+                cards[idx].className = 'scroll-key-card read';
+                cards[idx].querySelector('.click-hint').innerText = '✓ 已深度閱覽';
+            }
+
+            document.getElementById('detail-title').innerText = fp.title;
+            document.getElementById('detail-content').innerText = fp.content;
+            document.getElementById('detail-context-text').innerText = fp.context;
+            document.getElementById('detail-trap-text').innerText = fp.trap;
+
+            document.getElementById('dialog-focus-grid').classList.add('hidden');
+            document.getElementById('dialog-focus-detail').classList.remove('hidden');
+            if (isKnowledgeComplete(dynastyId)) showNotice('九個知識點已收集完成！現在可以前往時空考驗。');
+        }
+
+        document.getElementById('dialog-close').onclick = () => {
+            document.getElementById('scroll-dialog-overlay').classList.remove('show');
+        };
+        document.getElementById('detail-back-btn').onclick = () => {
+            document.getElementById('dialog-focus-detail').classList.add('hidden');
+            document.getElementById('dialog-focus-grid').classList.remove('hidden');
+        };
+        document.getElementById('dialog-to-trial-btn').onclick = () => {
+            if (!isKnowledgeComplete(activeDialogDynasty)) {
+                const total = dynastiesData.find(d => d.id === activeDialogDynasty).focusPoints.length;
+                const read = Object.keys(readFocusMap[activeDialogDynasty] || {}).filter(k => readFocusMap[activeDialogDynasty][k]).length;
+                showNotice(`請先收集此朝代全部知識點：目前 ${read} / ${total}。`);
+                return;
+            }
+            document.getElementById('scroll-dialog-overlay').classList.remove('show');
+            const dynastyIndex = dynastiesData.findIndex(x => x.id === activeDialogDynasty);
+            if (dynastyIndex !== -1) {
+                switchDynastyTab(dynastyIndex);
+                document.getElementById('trial').scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
+        function setupTrialTabs() {
+            const tabsContainer = document.getElementById('quest-tabs');
+            tabsContainer.innerHTML = '';
+            dynastiesData.forEach((d, idx) => {
+                const tab = document.createElement('button');
+                tab.className = 'quest-tab' + (dynastiesData[idx].id === currentDynastyId ? ' active' : '');
+                tab.id = `quest-tab-${idx}`;
+                const locked = !canAccessDynasty(idx);
+                tab.disabled = locked;
+                tab.title = locked ? '請先完成前一個朝代的三道情境題' : `${d.name} 任務`;
+                tab.innerHTML = `
+                    <span class="tab-no">${idx < 9 ? '0'+(idx+1) : (idx+1)}</span>
+                    <span class="tab-label">${d.name}</span>
+                `;
+                tab.onclick = () => switchDynastyTab(idx);
+                tabsContainer.appendChild(tab);
+            });
+        }
+
+        function switchDynastyTab(idx) {
+            if (!canAccessDynasty(idx)) {
+                showNotice('此朝代尚未開放：請先完成前一朝代的全部三題任務。');
+                return;
+            }
+            currentDynastyId = dynastiesData[idx].id;
+            currentTrialIndex = 0;
+            document.querySelectorAll('.quest-tab').forEach((t, i) => {
+                t.classList.toggle('active', i === idx);
+            });
+            loadTrialQuestion(currentTrialIndex);
+        }
+
+        function loadTrialQuestion(qIdx) {
+            currentTrialIndex = qIdx;
+            const dynasty = dynastiesData.find(x => x.id === currentDynastyId);
+            const trial = dynasty.trials[qIdx];
+
+            if (!isKnowledgeComplete(dynasty.id)) {
+                document.getElementById('q-dynasty-name').innerText = `${dynasty.name}・知識卷軸尚未收齊`;
+                document.getElementById('q-era-tag').innerText = '先解鎖考點';
+                document.getElementById('q-title').innerText = '先與 NPC 對話，收集全部知識點';
+                document.getElementById('q-prompt').innerText = '閱讀此朝代的九個考點後，時空裂隙才會開啟情境題。';
+                document.getElementById('q-avatar-box').innerHTML = '';
+                document.getElementById('q-npc-title').innerText = '';
+                document.getElementById('q-choices').innerHTML = '<div class="knowledge-lock">📜 請回到「九大朝代 NPC」點選此朝代，逐一閱覽所有考點。</div>';
+                document.getElementById('q-feedback').classList.add('hidden');
+                return;
+            }
+
+            const subNav = document.getElementById('sub-q-nav');
+            subNav.innerHTML = '';
+            dynasty.trials.forEach((t, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'sub-q-btn' + (i === qIdx ? ' active' : '');
+                if (earnedBadges[currentDynastyId] && earnedBadges[currentDynastyId][i]) {
+                    btn.classList.add('solved');
+                }
+                btn.innerText = `情境題 ${i+1}`;
+                btn.onclick = () => loadTrialQuestion(i);
+                subNav.appendChild(btn);
+            });
+
+            document.getElementById('q-dynasty-name').innerText = dynasty.name + ' ➔ ' + dynasty.npcName + ' 的時空考驗';
+            document.getElementById('q-era-tag').innerText = dynasty.era;
+            document.getElementById('q-title').innerText = trial.title;
+            document.getElementById('q-prompt').innerText = trial.prompt;
+            document.getElementById('q-npc-title').innerText = `${dynasty.npcName}（${dynasty.title}）出題：`;
+
+            const avatarBox = document.getElementById('q-avatar-box');
+            avatarBox.innerHTML = `
+                <div class="bean-avatar" style="transform: scale(0.85);">
+                    <div class="bean-hat"></div>
+                    <div class="bean-face"></div>
+                    <div class="bean-eye left"></div>
+                    <div class="bean-eye right"></div>
+                    <div class="bean-robe"></div>
+                </div>
+            `;
+
+            const choicesContainer = document.getElementById('q-choices');
+            choicesContainer.innerHTML = '';
+            trial.choices.forEach((choice, cIdx) => {
+                const btn = document.createElement('button');
+                btn.className = 'choice';
+                btn.innerText = choice;
+                btn.onclick = () => checkTrialAnswer(cIdx, trial.correct, trial.feedback, dynasty.scrolls[qIdx]);
+                choicesContainer.appendChild(btn);
+            });
+
+            document.getElementById('q-feedback').classList.add('hidden');
+        }
+
+        function checkTrialAnswer(selected, correct, feedbackText, scrollName) {
+            const card = document.getElementById('quest-card');
+            const choices = document.querySelectorAll('#q-choices .choice');
+            choices.forEach((btn, idx) => {
+                btn.disabled = true;
+                if (idx === correct) btn.classList.add('correct');
+                if (idx === selected && selected !== correct) btn.classList.add('wrong');
+            });
+
+            const fb = document.getElementById('q-feedback');
+            fb.classList.remove('hidden');
+            document.getElementById('feedback-text').innerText = feedbackText;
+
+            if (selected === correct) {
+                playSound('win');
+                card.classList.add('pulse-green');
+                setTimeout(() => card.classList.remove('pulse-green'), 600);
+                fb.className = 'feedback good';
+
+                if (!earnedBadges[currentDynastyId]) earnedBadges[currentDynastyId] = [false, false, false];
+                const alreadySolved = earnedBadges[currentDynastyId][currentTrialIndex];
+                earnedBadges[currentDynastyId][currentTrialIndex] = true;
+                
+                if (!alreadySolved) addLearningNote(dynastiesData.find(x => x.id === currentDynastyId).name, dynastiesData.find(x => x.id === currentDynastyId).trials[currentTrialIndex].title, feedbackText);
+                saveState();
+                renderBadgeGrid();
+                setupTrialTabs();
+
+                setTimeout(() => {
+                    showScrollPop(scrollName, feedbackText);
+                }, 600);
+
+            } else {
+                playSound('wrong');
+                card.classList.add('shake');
+                setTimeout(() => card.classList.remove('shake'), 400);
+                fb.className = 'feedback';
+                document.getElementById('feedback-text').innerText = '時空導師提醒：先比對題幹中的制度、對象與時代。請重新閱讀線索後再選一次。';
+                setTimeout(() => {
+                    choices.forEach(btn => { btn.disabled = false; btn.classList.remove('wrong'); });
+                }, 900);
+            }
+        }
+
+        function setupGrandNav() {
+            const nav = document.getElementById('grand-nav');
+            nav.innerHTML = '';
+            activeGrandTrials.forEach((gt, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'sub-q-btn' + (i === 0 ? ' active' : '');
+                btn.id = `grand-nav-${i}`;
+                btn.innerText = `隨機總題 ${i+1}`;
+                btn.disabled = i > 0 && !grandSolved[i - 1];
+                btn.onclick = () => loadGrandQuestion(i);
+                nav.appendChild(btn);
+            });
+        }
+
+        function loadGrandQuestion(gIdx) {
+            if (!allDynastiesComplete()) {
+                document.getElementById('g-title').innerText = '跨朝代總試煉尚未開啟';
+                document.getElementById('g-prompt').innerText = '請先完成十個朝代的知識點與三道情境題，才可挑戰綜合推論。';
+                document.getElementById('g-choices').innerHTML = '<div class="knowledge-lock">🏮 完成十朝任務後，這裡將開啟。</div>';
+                return;
+            }
+            if (gIdx > 0 && !grandSolved[gIdx - 1]) {
+                showNotice('請先完成上一題跨朝代試煉。');
+                return;
+            }
+            currentGrandIndex = gIdx;
+            document.querySelectorAll('#grand-nav button').forEach((b, i) => {
+                b.classList.toggle('active', i === gIdx);
+            });
+
+            const gt = activeGrandTrials[gIdx];
+            document.getElementById('g-tag-name').innerText = `跨朝代動態試煉 ${gIdx + 1} / 3`;
+            document.getElementById('g-title').innerText = gt.title;
+            document.getElementById('g-prompt').innerText = gt.prompt;
+
+            const choicesContainer = document.getElementById('g-choices');
+            choicesContainer.innerHTML = '';
+            gt.choices.forEach((choice, cIdx) => {
+                const btn = document.createElement('button');
+                btn.className = 'choice';
+                btn.innerText = choice;
+                btn.onclick = () => checkGrandAnswer(cIdx, gt.correct, gt.feedback);
+                choicesContainer.appendChild(btn);
+            });
+
+            document.getElementById('g-feedback').classList.add('hidden');
+        }
+
+        function checkGrandAnswer(selected, correct, feedbackText) {
+            const card = document.getElementById('grand-quest-card');
+            const choices = document.querySelectorAll('#g-choices .choice');
+            choices.forEach((btn, idx) => {
+                btn.disabled = true;
+                if (idx === correct) btn.classList.add('correct');
+                if (idx === selected && selected !== correct) btn.classList.add('wrong');
+            });
+
+            const fb = document.getElementById('g-feedback');
+            fb.classList.remove('hidden');
+            document.getElementById('g-feedback-text').innerText = feedbackText;
+
+            if (selected === correct) {
+                playSound('win');
+                card.classList.add('pulse-green');
+                setTimeout(() => card.classList.remove('pulse-green'), 600);
+                fb.className = 'feedback good';
+                grandSolved[currentGrandIndex] = true;
+                setupGrandNav();
+
+                if (grandSolved.every(Boolean)) {
+                    setTimeout(() => {
+                        showGrandReward();
+                    }, 800);
+                } else {
+                    setTimeout(() => {
+                        loadGrandQuestion(currentGrandIndex + 1);
+                    }, 1500);
+                }
+            } else {
+                playSound('wrong');
+                card.classList.add('shake');
+                setTimeout(() => card.classList.remove('shake'), 400);
+                fb.className = 'feedback';
+                document.getElementById('g-feedback-text').innerText = '請重新比對制度的時間順序與題幹中的因果關係，再試一次。';
+                setTimeout(() => { choices.forEach(btn => { btn.disabled = false; btn.classList.remove('wrong'); }); }, 900);
+            }
+        }
+
+        function showScrollPop(scrollName, desc) {
+            document.getElementById('pop-scroll-content').innerText = scrollName + '\n' + desc;
+            document.getElementById('scroll-pop-overlay').classList.add('show');
+        }
+        document.getElementById('pop-confirm-btn').onclick = () => {
+            document.getElementById('scroll-pop-overlay').classList.remove('show');
+        };
+
+        function showGrandReward() {
+            playSound('grand_win');
+            document.getElementById('grand-reward-overlay').classList.add('show');
+        }
+        document.getElementById('grand-confirm-btn').onclick = () => {
+            document.getElementById('grand-reward-overlay').classList.remove('show');
+            document.getElementById('bag').scrollIntoView({ behavior: 'smooth' });
+        };
+        document.getElementById('grand-retry-btn').onclick = () => {
+            document.getElementById('grand-reward-overlay').classList.remove('show');
+            initGrandTrial();
+            document.getElementById('grand-trial').scrollIntoView({ behavior: 'smooth' });
+        };
+
+        function renderBadgeGrid() {
+            const grid = document.getElementById('badge-grid');
+            grid.innerHTML = '';
+            dynastiesData.forEach(d => {
+                const unlockedList = earnedBadges[d.id] || [false, false, false];
+                const count = unlockedList.filter(Boolean).length;
+                const isEarnedAll = count === 3;
+
+                const badge = document.createElement('div');
+                badge.className = 'badge' + (isEarnedAll ? ' earned' : '');
+                badge.innerHTML = `
+                    <div style="font-size:24px;">${isEarnedAll ? '👑' : '📜'}</div>
+                    <b>${d.name}</b>
+                    <span class="scroll-count">已解鎖：${count} / 3 卷軸</span>
+                    <span style="font-size:10px; color:var(--text-muted);">${isEarnedAll ? '封印完全解開' : '挑戰情境中'}</span>
+                `;
+                grid.appendChild(badge);
+            });
+        }
+
+        function addLearningNote(dynastyName, trialTitle, feedback) {
+            const notesList = document.getElementById('notes-list');
+            if (learningNotes.length === 0) {
+                notesList.innerHTML = '';
+            }
+            learningNotes.push({ dynasty: dynastyName, title: trialTitle, text: feedback });
+
+            const noteDiv = document.createElement('div');
+            noteDiv.className = 'note';
+            noteDiv.innerHTML = `
+                <small>📜 【${dynastyName}】 ${trialTitle}</small>
+                <p>${feedback}</p>
+            `;
+            notesList.appendChild(noteDiv);
+        }
+
+        document.addEventListener('keydown', event => {
+            const modalOpen = document.querySelector('.custom-modal-overlay.show, .scroll-pop-overlay.show, .grand-reward-overlay.show');
+            if (event.key === 'Escape' && modalOpen) {
+                modalOpen.classList.remove('show');
+                return;
+            }
+            if (modalOpen || event.target.matches('input, textarea, select')) return;
+            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                const direction = event.key === 'ArrowRight' ? 1 : -1;
+                const index = dynastiesData.findIndex(d => d.id === currentDynastyId) + direction;
+                if (index >= 0 && index < dynastiesData.length) switchDynastyTab(index);
+                event.preventDefault();
+            }
+            if (/^[1-3]$/.test(event.key)) {
+                const choice = document.querySelectorAll('#q-choices .choice:not(:disabled)')[Number(event.key) - 1];
+                if (choice) { choice.click(); event.preventDefault(); }
+            }
+            if (event.key.toLowerCase() === 'g' && allDynastiesComplete()) {
+                document.getElementById('grand-trial').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        document.getElementById('music-toggle').addEventListener('click', () => {
+            musicEnabled = !musicEnabled;
+            const button = document.getElementById('music-toggle');
+            button.classList.toggle('on', musicEnabled);
+            button.setAttribute('aria-pressed', String(musicEnabled));
+            button.textContent = musicEnabled ? '♫ 古風音樂：開' : '♫ 古風音樂：關';
+            if (musicEnabled) { getAudioCtx(); startBgm(); playSound('scroll_open'); showNotice('古風像素 BGM 已開啟。'); }
+            else { stopBgm(); showNotice('古風像素 BGM 已關閉。'); }
+        });
+        window.onload = initApp;
+    </script>
+</body>
+</html>
